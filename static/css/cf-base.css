@@ -1,0 +1,232 @@
+body {
+    width: 1080px;
+    margin: 0px auto;
+    padding: 0px;
+    background-color: #f5f5dc;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 1080px;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+    background-color: #f5f5dc;
+}
+
+.banner {
+    width: 1080px;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top; 
+}
+
+.main {
+    width: 1080px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer {
+    width: 1080px;
+    height: 20px;
+    margin: 0;
+    background-color: green;
+    padding: 5px; 
+    font-size: 12px;
+    text-align: center
+}
+
+.search {
+    width:1080px;
+    margin:0px;
+    padding:0px;
+    vertical-align:top;
+}
+
+table {
+    vertical-align: top;
+    border: 0;
+    margin: 0;
+    border-collapse: collapse;
+    padding:0;
+}
+
+tr {
+    vertical-align: top;
+    border: 0;
+    margin: 0;
+    border-collapse: collapse;
+    padding:0;
+}
+
+td {
+    vertical-align: top;
+    border: 0;
+    margin: 0;
+    border-collapse: collapse;
+    padding:0;
+}
+
+.species {
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; 
+    word-break: normal;
+    overflow: hidden;
+}
+
+.welcome {
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden; 
+}
+
+.news {
+    width:500px;
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+     position: relative;
+     left:-5px;
+     top:-2px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden;
+    absolute; top:-360px; left:-5px;    
+}
+
+.events {
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+    border: 5px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden; 
+}
+
+.lab1 {
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden; 
+    font-size: 8px;
+}
+
+.lab2 {
+    height: 410px;
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden; 
+}
+
+.introduction {
+    width:700px;
+    height: 340px;
+    margin: 10px;
+    padding: 10px;    
+    vertical-align: top;
+    border: 1px solid #ccc;
+     position: relative;
+     left:-650px;
+     top: 400px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden; 
+    absolute; top:-362px; left:350px;
+}
+
+.other {
+    width:300px;
+    height: 340px;
+    margin: 10px;
+    padding: 10px; 
+    vertical-align:top;
+    border: 1px solid #ccc;
+	  position: relative;
+ 
+     top: 20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden; 
+}
+
+.quickLink {
+    width:1060px;
+    
+    margin: 10px;
+    padding: 10px; 
+     position: relative;
+     top: 800px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-break: normal;
+    overflow: hidden; 
+    absolute; top:-360px; left:-5px; 
+}
+
+.quickLink img {
+   
+    border: 1px solid #ccc;
+   
+}
+.map{
+    width:300px;
+    height:220px;
+    margin:0 auto;
+}
+.title {
+    background-color: #386F0D;
+    color: white;
+    font-weight:bold;
+    margin: 0;
+    padding: 1px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px;
+}
+
+p {    
+    font-size: 12px;
+}
+
+table .blast {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    width: 100%;
+    background-color: #f5f5dc;
+}

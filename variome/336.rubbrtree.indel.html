@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropDB</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/gene_search.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="icon" href="../static/images/icon.png">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.0.1/css/fixedColumns.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/4.0.1/js/dataTables.fixedColumns.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #chart {
+            width: 100%;
+            height: 500px;
+            margin-top: 20px;
+        }
+        .control-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .control-panel label {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .control-panel input {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+        .legend div {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .snp {
+            background-color: #e57373;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .indel {
+            width: 20px;
+            height: 20px;
+            background-color: #42a5f5;
+            border-radius: 50%;
+            margin-top: 5px;
+        }
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #333;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+<div id="loadingOverlay">Loading, please wait...</div>
+
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="../index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="../blast.html" >BLAST</a> </li>
+                <li><a href="../jbrowse.html">JBrowse</a></li>
+                <li><a href="../gene_search.html">Gene Search</a></li>
+                <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="../miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/sugercane.html">Various organs</a></li>
+                        <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/rubber.html">Various organs</a> </li>
+                        <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="../expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="../download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="../keygene/starch.html">Starch gene</a></li>
+                        <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="../keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="../helpyou.html">FAQ</a> </li>
+                <li><a href="../helpus.html">Contact us</a></li>
+                <li><a href="../conference.html">Conferences</a></li>
+                <li><a href="../links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div id="group" class="in_group m">
+    <div class="group-hd">
+        <h2>Variome</h2>
+    </div>
+    <div class="widget-content">
+        <div class="control-panel">
+            <label for="chromSearch">Search Chromosome:</label>
+            <input type="text" id="chromSearch" placeholder="Enter Chromosome (e.g., Chr1E)" value="Chr1E"/>
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="chart"></div>
+    </div>
+</div>
+
+<script>
+    var chartDom = document.getElementById('chart');
+    var myChart = echarts.init(chartDom);
+    var option;
+    var chromList = ["Chr1E", "NC_025993.1", "NC_025994.1", "NC_025995.1","NC_025996.1","NC_025997.1","NC_025998.1","NC_025999.1","NC_026000.1","NC_026001.1","NC_026002.1","NC_026003.1","NC_026004.1","NC_026005.1","NC_026006.1","NC_026007.1","NC_026008.1"];
+
+    function showLoading() {
+        document.getElementById('loadingOverlay').style.display = 'flex';
+    }
+
+    function hideLoading() {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }
+
+    function fetchAndRenderChart(chrom) {
+        showLoading();
+
+        var xhrIndel = new XMLHttpRequest();
+        xhrIndel.open('POST', '336.rubber.indel.fetch_data.php', true);
+        xhrIndel.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhrIndel.onreadystatechange = function () {
+            if (xhrIndel.readyState == 4 && xhrIndel.status == 200) {
+                var indelData = parseTextData(xhrIndel.responseText);
+                var xhrSNP = new XMLHttpRequest();
+                xhrSNP.open('POST', '336.rubbertree.snp.fetch_data.php', true);
+                xhrSNP.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhrSNP.onreadystatechange = function () {
+                    if (xhrSNP.readyState == 4 && xhrSNP.status == 200) {
+                        var snpData = parseTextData(xhrSNP.responseText);
+                        renderChart(indelData, snpData);
+                        hideLoading();
+                    }
+                };
+                xhrSNP.send('chrom=' + chrom);
+            }
+        };
+        xhrIndel.send('chrom=' + chrom);
+    }
+
+    function parseTextData(text) {
+        let pos = [];
+        let qual = [];
+        let ref = [];
+        let alt = [];
+        text.trim().split('\n').forEach(line => {
+            let [position, quality, reference, alternative] = line.split(',');
+            pos.push(position);
+            qual.push(parseFloat(quality));
+            ref.push(reference);
+            alt.push(alternative);
+        });
+        return { pos, qual, ref, alt };
+    }
+
+    function renderChart(indelData, snpData) {
+        const allPos = [...new Set([...indelData.pos, ...snpData.pos])].sort((a, b) => a - b);
+
+        const indelQual = allPos.map(pos => {
+            const index = indelData.pos.indexOf(pos);
+            return index !== -1 ? indelData.qual[index] : null;
+        });
+
+        const snpQual = allPos.map(pos => {
+            const index = snpData.pos.indexOf(pos);
+            return index !== -1 ? snpData.qual[index] : null;
+        });
+
+        // Prepare data for tooltip
+        const tooltipData = allPos.map(pos => {
+            const indelIndex = indelData.pos.indexOf(pos);
+            const snpIndex = snpData.pos.indexOf(pos);
+
+            return {
+                pos: pos,
+                indel: indelIndex !== -1 ? {
+                    qual: indelData.qual[indelIndex],
+                    ref: indelData.ref[indelIndex],
+                    alt: indelData.alt[indelIndex]
+                } : null,
+                snp: snpIndex !== -1 ? {
+                    qual: snpData.qual[snpIndex],
+                    ref: snpData.ref[snpIndex],
+                    alt: snpData.alt[snpIndex]
+                } : null
+            };
+        });
+
+        option = {
+            title: { text: 'Quality vs Position' },
+            toolbox: {
+                feature: {
+                    dataZoom: [
+                        { show: true, title: { zoom: 'Zoom', back: 'Reset Zoom' } },
+                        { type: 'inside', xAxisIndex: [0] }
+                    ],
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: [
+                { show: true, start: 0, end: 100 },
+                { type: 'inside', start: 0, end: 100 }
+            ],
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) {
+                    const position = params.value[0];
+                    const type = params.seriesName;
+
+                    const dataPoint = tooltipData.find(data => data.pos === position);
+
+                    let tooltipContent = `<b>Position: </b>${position}<br><b>Type: </b>${type}<br>`;
+
+                    if (type === 'SNP' && dataPoint.snp) {
+                        tooltipContent += `<b>REF: </b>${dataPoint.snp.ref}<br>`;
+                        tooltipContent += `<b>ALT: </b>${dataPoint.snp.alt}<br>`;
+                        tooltipContent += `<b>Quality: </b>${dataPoint.snp.qual}`;
+                    } else if (type === 'INDEL' && dataPoint.indel) {
+                        tooltipContent += `<b>REF: </b>${dataPoint.indel.ref}<br>`;
+                        tooltipContent += `<b>ALT: </b>${dataPoint.indel.alt}<br>`;
+                        tooltipContent += `<b>Quality: </b>${dataPoint.indel.qual}`;
+                    }
+
+                    return tooltipContent;
+                }
+            },
+            legend: { data: ['SNP', 'INDEL'] },
+            xAxis: { type: 'value', name: 'Position', boundaryGap: false },
+            yAxis: { type: 'value', name: 'Quality' },
+            series: [
+                {
+                    name: 'SNP',
+                    type: 'scatter',
+                    symbolSize: 10,
+                    large:true,
+                    largeThreshold:2000,
+                    data: snpData.pos.map((p, i) => [p, snpData.qual[i]]),
+                    itemStyle: { color: '#ff0000' }
+                },
+                {
+                    name: 'INDEL',
+                    type: 'scatter',
+                    symbolSize: 10,
+                    large: true,
+                    largeThreshold:2000,
+                    data: indelData.pos.map((p, i) => [p, indelData.qual[i]]),
+                    itemStyle: { color: '#42a5f5' }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    }
+
+    // Initial load
+    fetchAndRenderChart(chromList[0]);
+
+    // Search button event
+    document.getElementById('searchButton').onclick = function () {
+        const chrom = document.getElementById('chromSearch').value;
+        fetchAndRenderChart(chrom);
+    };
+</script>
+</body>
+</html>

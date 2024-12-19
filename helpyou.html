@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>TropDB</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/offcanvas/">
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/bootstrap2.css">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+ <link rel="stylesheet" href="./static/css/cf-base.css">
+ <link rel="stylesheet" href="./static/css/change__vis-timeline-graph2d-.min.css">
+ <link rel="stylesheet" href="./static/css/garden.css">
+ <link rel="stylesheet" href="./static/css/offcanvas.css">
+ <link rel="stylesheet" href="./static/css/style.fafu.css">
+ <link rel="stylesheet" href="./static/css/translateelement.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/fonts">
+    <link rel="stylesheet" href="./static/css/stat.css">
+<link rel="stylesheet" href="./static/css/reset.css">
+<link rel="stylesheet" href="./static/css/font-awesome.min.css">
+<link rel="icon" href="./static/images/logo.png">
+    <!-- Bootstrap core JS-->
+    <script src="./static/js/ajax.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/chart1.js"></script>
+    <script src="./static/js/chart2.js"></script>
+    <script src="./static/js/garden.js"></script>
+    <script src="./static/js/ichart.latest.js"></script>
+    <script src="./static/js/vis.js"></script>
+    <script src="./static/js/moment.min.js"></script>
+    <script src="./static/js/jquery-3.2.1.min.js"></script>
+    <script src="./static/js/winfloat.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/stat.js"></script>
+    <script src="./static/js/jquery.js"></script>
+    <script src="./static/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/gene_search.css">
+    <link rel="icon" href="static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/chart.js"></script>
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/chart.esm.js"></script>
+<body style="width: 100%">
+<!--header-->
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="./species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./blast.html" >BLAST</a> </li>
+                <li><a href="./jbrowse.html">JBrowse</a></li>
+                <li><a href="./gene_search.html">Gene Search</a></li>
+                <li><a href="./gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="./miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="expression/sugercane.html">Various organs</a></li>
+                        <li><a href="expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="expression/rubber.html">Various organs</a> </li>
+                        <li><a href="expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="./variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="./metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="./phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="./phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="./download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="keygene/starch.html">Starch gene</a></li>
+                        <li><a href="keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="./helpyou.html">FAQ</a> </li>
+                <li><a href="./helpus.html">Contact us</a></li>
+                <li><a href="conference.html">Conferences</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div id="group" class="in_group m">
+    <div class="group-hd">
+        <h2>FAQ</h2>
+    </div>
+        <div style="margin: 20px;line-height: 24px">
+        <div style="margin: 30px 0px;">
+            <h4>About TropDB</h4>
+			<p style="text-indent:2em;" class="big"><a href="#q1">1.What is TropDB?</a></p>
+            <p style="text-indent:2em;" class="big"><a href="#q2">2.How is TropDB structured?</a></p>
+            <p style="text-indent:2em;" class="big"><a href="#q3">3.How do I cite TropDB?</a></p>
+            <p style="text-indent:2em;" class="big"><a href="#q4">4.How can I contact TropDB?</a></p>
+            <p style="text-indent:2em;" class="big"><a href="#q5">5.Who should I contact if I think I have found a mistake/bug in the database?</a></p>
+            <h4>How to use</h4>
+            <p style="text-indent: 2em;" class="big"><a href="#q6">6.User Login Interface</a></p>
+            <p style="text-indent: 2em;" class="big"><a href="#q7">7.Genome Module</a></p>
+            <p style="text-indent: 2em;" class="big"><a href="#q8">8.Transcriptome Module</a></p>
+            <p style="text-indent: 2em;" class="big"><a href="#q9">9.Variome Module</a></p>
+            <p style="text-indent: 2em;" class="big"><a href="#q10">10.Metabolome Module</a></p>
+            <p style="text-indent: 2em;" class="big"><a href="#q11">11.Phenomics Module</a></p>
+            <p style="text-indent: 2em;" class="big"><a href="#q12">12.Breeding Module</a></p>
+            <h4>Data download and submission in TropDB</h4>
+            <p style="text-indent:2em;" class="big"><a href="#q13">13.What data and information does TropDB contain?</a></p>
+            <p style="text-indent:2em;" class="big"><a href="#q14">14.How can I download data from TropDB?</a></p>
+            <p style="text-indent:2em;" class="big"><a href="#q15">15.How can I contribute my data to TropDB?</a></p>
+            <p style="text-indent:2em;" class="big"><a href="#q16">16.What is TropDB's future plan?</a></p>
+        <div id="split-bar"></div>
+        </div>
+            <h4>About TropDB</h4>
+        <p style="text-indent:2em;" class="big" id="q1">What is TropDB?</p>
+           <p style="text-indent:2em;">Tropical Crops Genome Database is a genomic database designed for tropical crops. It contains various genomic data and tools for 8 species up to now.</p>
+        <p style="text-indent:2em;" class="big" id="q2">How is TropDB structured?</p>
+        <p style="text-indent:2em;">TropDB uses python and php frameworks to organize back-end programs, using Jquery and Bootstrap front-end frameworks to present information and interact with users. The entire project is deployed using apache.</p>
+        <p style="text-indent:2em;" class="big" id="q3">How do I cite TropDB?</p>
+        <p style="text-indent:2em;">Url for TropDB:<a href="https://bioinformatics.hainanu.edu.cn/tropdb/" target="_blank">https://bioinformatics.hainanu.edu.cn/tropdb/</a></p>
+        <p style="text-indent:2em;" class="big" id="q4">How can I contact TropDB?</p>
+        <p style="text-indent:2em;">Dr.Fei Chen</p>
+        <p style="text-indent:2em;">Mailing address: No.1, Weigang, Xuanwu District, Nanjing, Jiangsu, China</p>
+        <p style="text-indent:2em;">Postal code: 210032</p>
+        <p style="text-indent:2em;" class="big" id="q5">Who should I contact if I think I have found a mistake/bug in the database?</p>
+        <p style="text-indent:2em;">Please contact administrator via 1123107571@qq.com if you found a mistake/bug!</p>
+            <h4>How to use</h4>
+         <p style="text-indent:2em;" class="big" id="q6">User Login Interface</p>
+            <p style="text-indent:2em;"class="big">Navigation Bar</p>
+            <p style="text-indent:2em;">The navigation bar contains the following options:
+                Home: The main interface.
+                Genome: Hovering over the "Genome" menu will display submenus for species introductions (Cassava, Sugarcane, Oil Palm, Olive, Kenaf, Castor, Kapok, Rubber), along with tools such as Blast, JBrowse, Gene Search, Gene Family Search, and miRNA Search.
+                Transcriptome: Hovering over the "Transcriptome" menu will display a list of species, such as Cassava, Sugarcane, Oil Palm, Kenaf, Rubber, and Efp-gene, along with corresponding expression data under various treatment conditions.
+                Variome: Hovering over the "Variome" menu will display Cassava, Rubber, and Oil Palm as options.
+                Metabolome: Hovering over the "Metabolome" menu will display Cassava, Sugarcane, and Oil Palm options.
+                Phenomics: Hovering over the "Phenomics" menu will display Cassava and Sugarcane options.
+                Download: The download data interface.
+                Breeding: Hovering over the "Breeding" menu will display two tools: Key Gene and Guide RNA.
+                Help: Hovering over the "Help" menu will display FAQ, Contact Us, Conference, and Links options.</p>
+            <p style="text-indent:2em;"class="big">Species Classification Modules</p>
+            <p style="text-indent:2em;">Each category includes corresponding species, and each species name is clickable, leading to its introduction page.</p>
+            <p style="text-indent:2em;"class="big">Database Introduction</p>
+            <p style="text-indent:2em;">At the bottom of the homepage, you will find a brief description of the database, the news about the database’s inception, our lab's contact information under "Cite Us," and a map under "Visits" showing our location. The "Developer" section includes photos of the developers.</p>
+            <img src="static/images/zhuyemian.jpg" style="width: 920px">
+            <p style="text-indent:2em;margin-top: 20px" class="big" id="q7">Genome Module</p>
+            <p style="text-indent:2em;"class="big">Blast Tool</p>
+            <p style="text-indent:2em;">This feature links to the local Blast page of our lab, with separate protein and nucleic acid Blast databases created for eight species.</p>
+            <img src="static/images/blast.jpg" style="width: 920px">
+            <p style="text-indent:2em;" class="big" id="q8">Transcriptome Module</p>
+            <p style="text-indent:2em;">Taking cassava as an example, the expression data for various tissues is displayed in a list format. Additionally, a heatmap generation tool is available. Users can enter any gene ID in the search box and click "Generate" to produce a heatmap.
+                The vertical axis lists gene IDs, and the horizontal axis represents sample numbers. Detailed sample information is available by clicking the "Sample" link.</p>
+            <img src="static/images/biaodaliang.jpg" style="width: 920px">
+            <img src="static/images/retu.jpg" style="width: 920px">
+            <p style="text-indent:2em;">Example (Cassava):
+                After entering a gene ID in the search box and clicking "Search," the expression data will be displayed in color-coded format. Higher expression values are represented in red.</p>
+            <img src="static/images/efp.jpg" style="width:920px">
+            <p style="text-indent:2em;" class="big" id="q9">Variome Module</p>
+            <p style="text-indent:2em;">sing oil palm as an example, entering chromosome numbers in the search box will display the location of data variations along with corresponding values.</p>
+            <img src="static/images/variome.jpg"style="width: 920px">
+            <p style="text-indent:2em;" class="big" id="q10">Metabolome Module</p>
+            <p style="text-indent:2em;">Taking cassava as an example, metabolic data is presented in a list format.</p>
+            <img src="static/images/metabolome.jpg"style="width:920px">
+            <p style="text-indent:2em;" class="big" id="q11">Phenomics Module</p>
+            <p style="text-indent:2em;">This module primarily displays phenotypic data.</p>
+            <img src="static/images/biaoxing.jpg"style="width: 920px">
+            <p style="text-indent:2em;" class="big" id="q12">Breeding Module</p>
+            <p style="text-indent:2em;">This interface includes key genes for carbohydrates, oils, and starches.</p>
+            <img src="static/images/keygene.jpg"style="width: 920px">
+            <h4>Data download and submission in TropDB</h4>
+        <p style="text-indent:2em;" class="big" id="q13">What data and information does TropDB contain?</p>
+        <p style="text-indent:2em;">Currently, the TropDB contains several search tools and available data for researchers to conduct molecular biology, Genomics,Genetics, Phylogeny study. We also implemented a genomic browser that visualizes genomic data interactively and performed Basic Local Alignment Search Tool. GDS also includes several additional tools for complete data download, relative articles search. This current GDS is Version 1.0, so we will update it continuously and try to ensure it be the leading database for Fragaria genomics. </p>
+        <p style="text-indent:2em;" class="big" id="q14">How can I download data from TropDB?</p>
+        <p style="text-indent:2em;">You can download all the data TropDB containing by <a href="eplantftp.njau.edu.cn">the Download page</a></p>
+        <p style="text-indent:2em;" class="big" id="q15">How can I contribute my data to TropDB?</p>
+        <p style="text-indent:2em;">We welcome all kinds of cooperation research. Contact us if you have any valuable data such as transcriptome, genome.</p>
+        <p style="text-indent:2em;" class="big" id="q16">What is TropDB's future plan?</p>
+        <p style="text-indent:2em;">Our initial plan is to collect more transcriptome data and develop a visualization tool in web page. All the researchers can easily observe the differential expression of genes.In the future, we will develop more useful tool, perform deeper mining of genomics data and make it availiable on our website.</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

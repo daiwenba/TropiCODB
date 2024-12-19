@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phenotype of cassava</title>
+    <!-- 引入 DataTables CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/gene_search.css">
+    <style>
+        table img {
+            width: 250px;
+            height: 200PX;
+            display: block;
+            margin: auto;
+        }
+        .phenomics {
+            width: 80%;           /* 设置宽度为 80% */
+            margin: 0 auto;       /* 上下外边距为 0，左右自动对齐 */
+            padding: 20px;       /* 内边距（可选） */
+            border-radius: 10px; /* 边角圆润效果（可选） */
+        }
+        table.dataTable thead th {
+            text-align: center; /* 列名居中 */
+            vertical-align: middle; /* 垂直居中（多行文本也居中） */
+        }
+        table.dataTable tbody td {
+            text-align: center; /* 内容居中 */
+        }
+    </style>
+</head>
+<body>
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="../index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="../blast.html" >BLAST</a> </li>
+                <li><a href="../jbrowse.html">JBrowse</a></li>
+                <li><a href="../gene_search.html">Gene Search</a></li>
+                <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="../miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/sugercane.html">Various organs</a></li>
+                        <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/rubber.html">Various organs</a> </li>
+                        <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="../expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="../download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="../keygene/starch.html">Starch gene</a></li>
+                        <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="../keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="../helpyou.html">FAQ</a> </li>
+                <li><a href="../helpus.html">Contact us</a></li>
+                <li><a href="../conference.html">Conferences</a></li>
+                <li><a href="../links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!--search-->
+<div class="background " style="height: 100px;width: 80%; margin: 0 auto; /* 容器水平居中 */
+            display: flex; /* 使用 flexbox 布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */">
+    <img src="../static/images/sheets.jpg" width="100%" height="100%"  alt="">
+</div>
+<div class="phenomics">
+<h2>Phenotype of cassava</h2>
+<!-- 静态表格 -->
+<table id="example" class="display" >
+    <thead>
+    <tr>
+        <th>COMMON NAME</th>
+        <th>FEATURED TRAITS</th>
+        <th>Cut Stems</th>
+        <th>Roots & Flesh</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>NR 8082</td>
+        <td>High yielding (> 25 t/ha) – NRCRI, Umudike</td>
+        <td><img src="./cassava_images/NR8082cun-stems.jpg" alt="产品A"></td>
+        <td><img src="./cassava_images/NR8082RootFlesh.jpg" alt="产品A"></td>
+    </tr>
+    <tr>
+        <td>TME419</td>
+        <td>High dry matter (25%), high CMD resistance, high yielding (> 25 t/ha), poundable and high starch</td>
+        <td><img src="./cassava_images/TME419Cutstems.jpg" alt="产品B"></td>
+        <td><img src="./cassava_images/TME419Rootflesh.jpg" alt="产品B"></td>
+    </tr>
+    <tr>
+        <td>IITA-TMS-IBA011368</td>
+        <td>Vitamin A cassava, yellow roots, moderate CMD resistance and high yielding (> 25 t/ha)</td>
+        <td><img src="./cassava_images/TMS011368CUTSTEMS.jpg" alt="产品C"></td>
+        <td><img src="./cassava_images/TMS011368ROOT.jpg" alt="产品C"></td>
+    </tr>
+    <tr>
+        <td>IITA-TMS-IBA011368</td>
+        <td>Vitamin A cassava, yellow roots, moderate CMD resistance and high yielding (> 25 t/ha)</td>
+        <td><img src="./cassava_images/TMS011368CUTSTEMS.jpg" alt="产品C"></td>
+        <td><img src="./cassava_images/TMS011368ROOT.jpg" alt="产品C"></td>
+    </tr>
+    <tr>
+        <td>IITA-TMS-IBA980581</td>
+        <td>High dry matter (25%), high CMD resistance, high yielding (> 25 t/ha), stay green and drought tolerant</td>
+        <td><img src="./cassava_images/TMS980581CUTSTEMS.jpg" alt="产品C"></td>
+        <td><img src="./cassava_images/TMS980581ROOT.jpg" alt="产品C"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<!-- 引入 jQuery 和 DataTables JS -->
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            ordering: false,      // 启用排序
+            searching: false,  // 禁用搜索框
+            info: false,       // 禁用底部表格信息
+            dom: 't',          // 仅保留表格本身
+        });
+    });
+</script>
+</body>
+</html>

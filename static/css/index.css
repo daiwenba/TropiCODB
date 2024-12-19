@@ -1,0 +1,418 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.w{
+    width: 100%;
+    margin: 0 auto;
+}
+body{
+
+    height: 1750px;
+}
+@font-face {
+	  font-family:myFont;
+	  src:url('../font/Bacchus-ExtraBold-2.ttf');
+	}
+@font-face {
+	  font-family:myFont2;
+	  src:url('../font/Cunia.otf');
+	}
+.tf h5{
+    margin-left: 20px;
+}
+.tf {
+    float: left;
+    width: 110px;
+}
+.h{
+    width: 1000px;
+    margin: 0 auto;
+    height: 50px;
+}
+.header{
+    width: 1000px;
+    margin: 0 auto;
+    height: 50px;
+}
+.h h1{
+    font-family: myFont2, serif;
+    font-size: 35px;
+    color:#094D24;
+}
+.h small{
+    font-family: myFont, serif;
+    font-size: 23px;
+    margin-left: 20px;
+    color: #386F0D;
+}
+.h2 {
+    width:1000px;
+   margin: 0 auto;
+}
+.m{
+    width: 1000px;
+    margin: 0 auto;
+}
+.z{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.slide{
+    width: 1000px;
+    margin: 0 auto;
+}
+.tab{
+    width: 1000px;
+    margin: 0 auto;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.clearerfix:before,.clearerfix:after{
+    content: "";
+    display: table;
+}
+.clearerfix:after{
+    clear: both;
+}
+.clearerfix{
+    *zoom:1
+}
+.shell{
+    display: flex;
+    justify-content:center;
+}
+.shell:nth-child(1){
+    background: linear-gradient(135deg, #9bc0a8, #2a5d3e);
+
+}
+.botton{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    transition: .3s;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    color:#e2e2e2;
+}
+.botton span a{
+    text-decoration: none;
+}
+.botton:hover{
+    background-color: #c1e2b3;
+}
+.botton li:hover{
+    background-color:#c1e2b3;
+}
+.botton a:hover{
+    color: #3e776f;
+}
+.botton ul li{
+    height: 0;
+    transition: .2s;
+    opacity: 0;
+    transform: translateY(-40px);
+    background-color: #f2f8f3;
+    font-size: 18px;
+    color:#e2e2e2;
+}
+.botton ul li a{
+    color:#3e776f;
+}
+.botton span a{
+    color:#e2e2e2;
+}
+.botton:hover li{
+    height: 40px;
+    opacity: 1;
+    transform: translateY(0);
+    z-index:20000;
+    position: relative;
+}
+.has-submenu {
+    position: relative; /* 保证子菜单相对于这个项定位 */
+}
+
+.submenu {
+    opacity: 0; /* 初始状态为透明 */
+    visibility: hidden; /* 初始状态下不可见 */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s ease 0.3s; /* 控制透明度、位移和可见性 */
+    font-size: 18px;
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    left: 100%; /* 将子菜单放置到父元素右侧 */
+    background-color: #f2f8f3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #e2e2e2;
+    transform: translateY(-40px); /* 初始状态下向上偏移 */
+    pointer-events: none; /* 禁止点击事件 */
+}
+
+/* 鼠标悬停时显示二级菜单 */
+.has-submenu:hover .submenu {
+    white-space: nowrap;
+    opacity: 1; /* 变为可见 */
+    visibility: visible; /* 显示菜单 */
+    transform: translateY(0); /* 还原位置 */
+    pointer-events: auto; /* 启用点击事件 */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s ease 0s; /* 移除 visibility 的延迟 */
+}
+
+.carousel{
+    height: 468px;
+    background-color: #ffffff;
+    margin-top: 0;
+}
+.carousel-inner img{
+    height: 400px;
+    width: 1000px;
+}
+
+.box{
+    margin-top: 2px;
+}
+.box_a{
+    margin-bottom: 10px;
+}
+.box-one{
+    height: 370px;
+    border-radius: 5px 5px 25px 0px;
+    border:1px solid;
+    border-color: #92b99f;
+    margin-top: 10px;
+    width: 485px;
+    float: left;
+    box-shadow: darkgrey 10px 10px 30px 5px;
+}
+.box-two{
+    height: 370px;
+    border-radius:5px 5px 25px 0px;
+    border:1px solid;
+    border-color: #92b99f;
+    margin-top: 10px;
+    float: right;
+    width: 485px;
+    box-shadow: darkgrey 10px 10px 30px 5px;
+}
+.box-a{
+    height: 45px;
+    background: linear-gradient(135deg, #9bc0a8, #2a5d3e);
+
+}
+.box-a h3{
+    float: left;
+    font-size: 22px;
+    color: #e2e2e2;
+}
+.box-a a{
+    float: right;
+    font-size: 15px;
+    color: #e2e2e2;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.box-ab{
+
+}
+.box-hd{
+    height: 50px;
+
+}
+.box-hd h3 {
+    float: left;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+.box-hd a{
+    float: right;
+    font-size: 17px;
+    color: #9d9d9d;
+    margin-top: 20px;
+}
+.box-bd ul{
+    width: 1220px;
+
+}
+.box-bd ul li{
+    float: left;
+    width: 179px;
+    height: 280px;
+    background-color: #ffffff;
+    margin-right: 26px;
+    margin-bottom: 15px;
+    box-shadow: darkgrey 5px 5px 30px 10px;
+    border:1px solid #ffffff;
+    border-radius:10px 10px 10px 10px;
+}
+.box-bd ul li img{
+    width: 100%;
+    height: 170px;
+    border-radius:10px 10px 0px 0px;
+}
+.box-bd ul li h4{
+    text-align: center;
+    color: #08652d;
+}
+.box-bd ul li h5{
+   text-align: center;
+}
+.box-bd ul li a{
+    color: #1a1a1a;
+}
+.arrow-icon::after{
+    content: '';
+}
+.tabs{
+    height: 360px;
+    margin-top: 20px;
+    box-shadow: darkgrey 10px 10px 30px 5px;
+    margin-bottom: 20px;
+}
+.tablist{
+    float: left;
+    height: 350px;
+    background-color: #ffffff;
+    width: 1000px;
+    border-radius:5px;
+
+}
+.nav-tabs {
+    background: linear-gradient(135deg, #9bc0a8, #2a5d3e);
+    display: flex; /* 使用 Flexbox 实现横向布局 */
+    justify-content: space-between; /* 均匀分布按钮 */
+    padding: 0;
+    margin: 0;
+}
+
+.tablist ul {
+    display: flex; /* 确保 ul 也为 flex 容器 */
+    width: 100%; /* 占满父容器宽度 */
+    padding: 0; /* 去除默认内边距 */
+    margin: 0; /* 去除默认外边距 */
+    list-style: none; /* 去掉默认列表样式 */
+}
+
+.tablist ul li {
+    flex: 1; /* 每个按钮均分宽度 */
+    height: 45px;
+    line-height: 45px;
+    background-color: #92b99f;
+    text-align: center; /* 确保文字居中 */
+}
+
+.tablist ul li a {
+    display: inline-block; /* 修改为 inline-block，避免内容换行 */
+    width: 100%; /* 按钮占满父容器 */
+    height: 100%; /* 按钮高度与父容器一致 */
+    line-height: 45px; /* 保持垂直居中 */
+    font-size: 20px;
+    color: #e2e2e2;
+    text-decoration: none; /* 去除下划线 */
+    transition: background-color 0.3s, color 0.3s; /* 添加悬停效果 */
+}
+
+.tablist ul li a:hover {
+    background-color: #2a5d3e; /* 悬停背景色 */
+    color: #fff; /* 悬停文字颜色 */
+}
+
+.tab-content{
+    float: left;
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #4a4f52;
+    margin-left: 5px;
+}
+.footer{
+    background: linear-gradient(135deg, #9bc0a8, #2a5d3e);
+    height: 70px;
+    margin-top: 5px;
+}
+.footer p{
+    display: block;
+    height: 42px;
+    padding: 0 60px;
+    line-height: 42px;
+    font-size: 20px;
+    color:#e2e2e2;
+    text-align:center;
+}
+.chart-container{
+    height:300px;
+    width: 600px;
+    float: left;
+}
+.chart-con{
+    height: 300px;
+    width: 400px;
+    margin-left: 600px;
+    padding-top: 60px;
+}
+
+.eximg img{
+    width: 254px;
+    height: 154px;
+}
+.thr th{
+    width: 60%;
+    font-size: 20px;
+}
+.thr td{
+    width: 60%;
+    font-size: 18px;
+}
+.tab-pane {
+    max-height: 300px; /* 设置模块的最大高度 */
+    overflow-y: auto; /* 启用垂直滚动条 */
+    overflow-x: hidden; /* 禁用水平滚动条，防止内容横向溢出 */
+    box-sizing: border-box; /* 确保内边距和宽度不会导致溢出 */
+}
+.floating-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明背景色 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    opacity: 0; /* 初始状态透明 */
+    transition: opacity 0.3s ease; /* 渐变效果 */
+    cursor: pointer;
+}
+
+/* 鼠标悬浮时按钮完全显示 */
+.floating-button:hover {
+    opacity: 1;
+}
+#Conference {
+    position: relative; /* 确保按钮相对于这个容器定位 */
+}
+.developer-container {
+    display: flex; /* 使用 flexbox 来布局，水平排列 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: flex-start; /* 默认情况下从左到右排列 */
+}
+
+.developer-item {
+    margin-right: 10px; /* 给每个项目添加右边距，确保它们之间有间距 */
+    margin-top: 10px;
+}
+
+.developer-image {
+    width: 150px; /* 控制图片大小 */
+    height: auto; /* 保持图片比例 */
+}
+

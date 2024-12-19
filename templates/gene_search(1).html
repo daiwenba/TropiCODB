@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropDB</title>
+    <!--Bootstrap core css-->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/gene_search.css">
+    <link rel="icon" href="static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/chart.js"></script>
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/chart.esm.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span><a href="index.html">Home</a> </span>
+        </li>
+        <li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li><a href="./species/Musa acuminata.html">Banana</a></li>
+                <li><a href="./species/Arecac.html">Betel nut</a></li>
+                <li><a href="./species/natural_rubber.html">Nature rubber</a></li>
+                <li><a href="./species/sugar_cane.html">Suger cane</a> </li>
+                <li><a href="./species/oil_plam.html">Oilpalm</a></li>
+                <li><a href="./species/olive.html">Olive</a></li>
+                <li><a href="./species/pepper.html">Pepper</a> </li>
+                <li><a href="./species/ginger.html">Ginger</a></li>
+                <li><a href="./species/coffee.html">Coffee</a></li>
+                <li><a href="./species/coco.html">Cocoa</a></li>
+                <li><a href="./species/cassava.html">Cassava</a></li>
+                <li><a href="./species/water_lilies.html">Water lilies</a></li>
+                <li><a href="./species/orchid.html">Orchid</a></li>
+                <li><a href="./species/papaya.html">Papaya</a></li>
+                <li><a href="./species/castor.html">Castor</a></li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li><a href="./species/mango.html">Mango</a></li>
+                <li><a href="./species/passion.html">Passion fruit</a></li>
+                <li><a href="./species/pineapple.html">Pineapple</a></li>
+                <li><a href="./species/durian.html">Durian</a></li>
+                <li><a href="./species/rambu.html">Rambutan</a></li>
+
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Tools<span class="caret"></span></span>
+            <ul>
+                <li><a href="http://192.168.21.76:4567/">BLAST</a> </li>
+                <li><a href="https://bioinformatics.hainanu.edu.cn/hortdb/JBrowseDetail_list.action?J_type=1">JBrowse</a></li>
+                <li><a href="./gene_search.html">Gene Search</a></li>
+                <li><a href="./gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="./miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="./download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Community<span class="caret"></span></span>
+            <ul>
+                <li><a href="./conference.html">Conferences</a></li>
+                <li><a href="./links.html">Links</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="./helpyou.html">FAQ</a> </li>
+                <li><a href="./helpus.html">Contact us</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+    <script language="JavaScript">
+      function test(textOne){
+      document.all.textOne.value=textOne.value
+      }
+    </script>
+<div id="group" class="in_group m">
+    <div class="group-hd">
+        <h2>Gene Search</h2>
+    </div>
+         <div class="widget-content" >
+             <p style="text-indent:2em">Select the 9 species of tropical crops and click the example button. It will offer you a typical gene of the species then you can get the detail information by clicking the search button.
+                 The detail information including the <b>introduction, CDS sequence, PEP sequence, KEGG, gene family, signal protein, Go annotation and expression.</b></p>
+
+             <br><p style="text-indent:2em">The source of these data:
+            <h4><small> <i>Areca catechu</i>:     Patrick P. Edger.et al. 2020</small></h4>
+             <h4><small><i>Musa acuminata</i>:    Angélique D'Hont.et al. 2012</small></h4>
+             <h4><small><i>Manihot esculenta</i>:    Xin-Dong Xu.et al. 2012</small></h4>
+            <h4><small><i>Coffea arabica</i>:   Yeshitila Mekbib.et al. 2022</small></h4>
+            <h4><small><i>Theobroma cacao</i>:     Motamayor,J.C.et al. 2013</small></h4>
+            <h4><small><i>Mangifera indica</i>:    Peng Wang.et al. 2020</small></h4>
+            <h4><small><i>Phalaenopsis equestris</i>:       Jing Cai.et al. 2015</small></h4>
+            <h4><small><i>Passiflora edulis</i>:       Zhiqiang Xia.et al. 2021</small></h4>
+             <h4><small><i>Nephelium lappaceum</i>:      Wenping Zhang.et al. 2021</small></h4>
+             <form action="search_result.php" class="form-search" method="post" style="margin-top:20px;">
+              <div class="form-group"></br>
+                  <h4 style="float: left"><b>Species</b></h4>
+                  <h4 style="margin-left: 195px"><b>Gene ID</b></h4>
+                  <select id="sel" class="special-form"  onChange="test(this)">
+                    <option value="" selected="selected">--Please Select--</option>
+                      <option value="Acat_1g000010"><i>Areca catechu</i></option>
+                    <option value="Ma04_p36730">Musa acuminata</option>
+                    <option value="EOY11914">Coffea arabica</option>
+                    <option value="EOY11914">Theobroma cacao</option>
+                    <option value="GWHPABLA000001">Mangifera indica</option>
+                    <option value="XP_020593076">Phalaenopsis equestris</option>
+                    <option value="GWHPAZTM012409">Passiflora edulis</option>
+                    <option value="GWHPBECQ000001">Nephelium lappaceum</option>
+                </select>
+                <input class="special-form"  type="text" id="textOne" name="gene_id" onmouseover="this.focus();this.select();" onclick="my_click(this, 'textOne');" onBlur="my_blur(this, 'textOne');" />
+              </div>
+                <button class="btn btn-success" type="button" id="example" style="color:gray; background-color:#dff0d8;border:white" value="clear" onclick="document.getElementById('textOne').value='';document.getElementById('sel').value='';">Clear All</button>
+                <button type="submit" class="btn btn-success" style="margin-left:15px;">Search</button>
+            </form>
+        </div>
+    </div>
+<div class="footer m">
+    <p> Hainan University, Sanya, Hainan, China | 2024</p>
+</div>
+</body>
+</html>

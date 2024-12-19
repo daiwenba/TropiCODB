@@ -1,0 +1,426 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropGD</title>
+     <!--Bootstrap core css-->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="static/css/index.css">
+     <link rel="stylesheet" href="static/css/gene_search.css">
+<link rel="icon" href="static/images/topical.jpg">
+    <!-- Bootstrap core JS-->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/chart.js"></script>
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/chart.esm.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="index.html">Home</a> </span>
+        </li>
+        <li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li><a href="species/cassava6.1.html">Cassava</a></li>
+                <li><a href="./species/sugar_cane.html">Sugar cane</a> </li>
+                <li><a href="./species/oil_plam.html">Oilpalm</a></li>
+                <li><a href="./species/olive.html">Olive</a></li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li><a href="./species/castor.html">Castor</a></li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li><a href="./species/natural_rubber.html">Rubber tree</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li><a href="http://192.168.21.76:4567/">BLAST</a> </li>
+                <li><a href="https://bioinformatics.hainanu.edu.cn/hortdb/JBrowseDetail_list.action?J_type=1">JBrowse</a></li>
+                <li><a href="./gene_search.html">Gene Search</a></li>
+                <li><a href="./gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="./miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span style="height: 22.4px ; width: 81.16px"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">cassava</a>
+                    <ul class="submenu">
+                        <li><a href="expression/cassavaexpression.html">various organs</a> </li>
+                        <li><a href="expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Suger cane</a>
+                    <ul class="submenu">
+                        <li><a href="expression/sugercane.html">Various organs</a></li>
+                        <li><a href="expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oilpalm</a>
+                    <ul class="submenu">
+                        <li><a href="expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="expression/rubber.html">Various organs</a> </li>
+                        <li><a href="expression/rubber1.html">Laticifer_replicate</a> </li>
+                        <li><a href="expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">efp</a>
+                    <ul class="submenu">
+                        <li><a href="efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="./variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+                <li><a href="variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="variome/573cassava.indel.html">Cassava</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="./download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Community<span class="caret"></span></span>
+            <ul>
+                <li><a href="./conference.html">Conferences</a></li>
+                <li><a href="./links.html">Links</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="./helpyou.html">FAQ</a> </li>
+                <li><a href="./helpus.html">Contact us</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+        function tf_submit(){
+            if($("input:checkbox[name='tf-family']:checked").length>0 && $("input:checkbox[name='species-name']:checked").length>0){
+                $("#tf-list-form").submit();
+            } else {
+                $("#warning").show();
+            }
+        }
+        function DoCheck()
+        {
+        var ch=document.getElementsByName("species-name");
+        if(document.getElementsByName("allChecked")[0].checked==true)
+        {
+        for(var i=0;i<ch.length;i++)
+        {
+        ch[i].checked=true;
+        }
+        }else{
+        for(var i=0;i<ch.length;i++)
+        {
+        ch[i].checked=false;
+        }
+        }
+        }
+    </script>
+<div id="group" class="in_group m">
+	<div id="species">
+		<div class="tlt"><h2>Transcription Factor Search</h2></div>
+         <div class="widget-content" style="padding:20px 30px 40px 40px;">
+    <form id="tf-list-form" action="tf_result.php" class="form-search" method="post" style="margin-top:20px;">
+        <p style="text-indent:2em;font-size: 20px;margin-bottom: 10px">List of transcription factor family</p>
+        <div id="tf-list">
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="AP2/ERF">&nbsp;&nbsp;AP2/ERF
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="ARID">&nbsp;&nbsp;ARID
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="AUX/IAA">&nbsp;&nbsp;AUX/IAA
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Alfin-like">&nbsp;&nbsp;Alfin-like
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="B3">&nbsp;&nbsp;B3
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="BBR-BPC">&nbsp;&nbsp;BBR-BPC
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="BES1">&nbsp;&nbsp;BES1
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="C2C2">&nbsp;&nbsp;C2C2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="C2H2">&nbsp;&nbsp;C2H2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="C3H">&nbsp;&nbsp;C3H
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="CAMTA">&nbsp;&nbsp;CAMTA
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="CPP">&nbsp;&nbsp;CPP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="CSD">&nbsp;&nbsp;CSD
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Coactivator p15">&nbsp;&nbsp;Coactivator p15
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="DBB">&nbsp;&nbsp;DBB
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="DBP">&nbsp;&nbsp;DBP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="DDT">&nbsp;&nbsp;DDT
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="E2F-DP">&nbsp;&nbsp;E2F-DP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="EIL">&nbsp;&nbsp;EIL
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="FAR1">&nbsp;&nbsp;FAR1
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="GARP">&nbsp;&nbsp;GARP
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="GNAT">&nbsp;&nbsp;GNAT
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="GRAS">&nbsp;&nbsp;GRAS
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="GRF">&nbsp;&nbsp;GRF
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="GeBP">&nbsp;&nbsp;GeBP
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="HB">&nbsp;&nbsp;HB
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="HMG">&nbsp;&nbsp;HMG
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="HRT">&nbsp;&nbsp;HRT
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="HSF">&nbsp;&nbsp;HSF
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="IWS1">&nbsp;&nbsp;IWS1
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="Jumonji">&nbsp;&nbsp;Jumonji
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="LFY">&nbsp;&nbsp;LFY
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="LIM">&nbsp;&nbsp;LIM
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="LOB">&nbsp;&nbsp;LOB
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="LUG">&nbsp;&nbsp;LUG
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="MADS">&nbsp;&nbsp;MADS
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="MBF1">&nbsp;&nbsp;MBF1
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="MED6">&nbsp;&nbsp;MED6
+                    </label>
+                  <label>
+                        <input type="checkbox" name="tf-family[]" value="MED7">&nbsp;&nbsp;MED7
+
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="MYB">&nbsp;&nbsp;MYB
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="NAC">&nbsp;&nbsp;NAC
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="NF-X1">&nbsp;&nbsp;NF-X1
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="NF-Y">&nbsp;&nbsp;NF-Y
+                    </label>
+                 <label>
+                        <input type="checkbox" name="tf-family[]" value="OFP">&nbsp;&nbsp;OFP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Others">&nbsp;&nbsp;Others
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="PHD">&nbsp;&nbsp;PHD
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="PLATZ">&nbsp;&nbsp;PLATZ
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Pseudo ARR-B">&nbsp;&nbsp;Pseudo ARR-B
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="RB">&nbsp;&nbsp;RB
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="RWP-RK">&nbsp;&nbsp;RWP-RK
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Rcd1-like">&nbsp;&nbsp;Rcd1-like
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="S1Fa-like">&nbsp;&nbsp;S1Fa-like
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SAP">&nbsp;&nbsp;SAP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SBP">&nbsp;&nbsp;SBP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SET">&nbsp;&nbsp;SET
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SNF2">&nbsp;&nbsp;SNF2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SOH1">&nbsp;&nbsp;SOH1
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SRS">&nbsp;&nbsp;SRS
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="STAT">&nbsp;&nbsp;STAT
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SWI/SNF-BAF60b">&nbsp;&nbsp;SWI/SNF-BAF60b
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="SWI/SNF-SWI3">&nbsp;&nbsp;SWI/SNF-SWI3
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="TAZ">&nbsp;&nbsp;TAZ
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="TCP">&nbsp;&nbsp;TCP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="TRAF">&nbsp;&nbsp;TRAF
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="TUB">&nbsp;&nbsp;TUB
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Tify">&nbsp;&nbsp;Tify
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Trihelix">&nbsp;&nbsp;Trihelix
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="ULT">&nbsp;&nbsp;ULT
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="VOZ">&nbsp;&nbsp;VOZ
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="WRKY">&nbsp;&nbsp;WRKY
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="Whirly">&nbsp;&nbsp;Whirly
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="bHLH">&nbsp;&nbsp;bHLH
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="bZIP">&nbsp;&nbsp;bZIP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="mTERF">&nbsp;&nbsp;mTERF
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tf-family[]" value="zf-HD">&nbsp;&nbsp;zf-HD
+                    </label>
+                </div>
+        <p style="text-indent:2em;font-size: 20px;margin-bottom: 10px;float:left">List of species of strawberries</p><input  type="checkbox" name="allChecked" id="allChecked" onchange="DoCheck()" style="float:left;margin-left:30px;margin-right:10px;"/><span style="font-size:14px;">Choose all/ Cancel</span></h4>
+        <div id="spe-list" style="margin-top: 20px">
+                    <label style="margin-right: 80px; font-size: 16px;font-weight: normal">
+                        <input type="checkbox" name="species-name[]" value="Fragaria ×ananassa">&nbsp;&nbsp;<i>Fragaria</i>  ×<i>ananassa</i>
+                    </label>
+
+             <label style="margin-right: 80px; font-size: 16px;font-weight: normal;margin-bottom: 20px">
+                        <input type="checkbox" name="species-name[]" value="Fragaria iinumae">&nbsp;&nbsp;<i>Fragaria iinumae</i>
+                    </label>
+            <label style="margin-right: 80px; font-size: 16px;font-weight: normal">
+                        <input type="checkbox" name="species-name[]" value="Fragaria nilgerrensis">&nbsp;&nbsp;<i>Fragaria nilgerrensis</i>
+                    </label>
+            <label style="margin-right: 96px; font-size: 16px;font-weight: normal">
+                        <input type="checkbox" name="species-name[]" value="Fragaria nubicola">&nbsp;&nbsp;<i>Fragaria nubicola</i>
+                    </label>
+            <label style="margin-right: 100px; font-size: 16px;font-weight: normal">
+                        <input type="checkbox" name="species-name[]" value="Fragaria vesca">&nbsp;&nbsp;<i>Fragaria vesca</i>
+                    </label>
+            <label style="margin-right: 80px; font-size: 16px;font-weight: normal">
+                        <input type="checkbox" name="species-name[]" value="Fragaria viridis">&nbsp;&nbsp;<i>Fragaria viridis</i>
+                    </label >
+                </div>
+                <button type="submit" class="btn btn-success" style="margin-left:450px;" onclick="tf_submit()">Search</button>
+       </form>
+        </div>
+    </div>
+    </div>
+	</div>
+</div>
+

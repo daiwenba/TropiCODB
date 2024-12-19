@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropGD</title>
+    <!--Bootstrap core css-->
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/gene_search.css">
+    <link rel="icon" href="../static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/chart.js"></script>
+    <script src="../static/js/chart.min.js"></script>
+    <script src="../static/js/chart.esm.js"></script>
+</head>
+<style>
+    select {
+        font-size: 16px;
+        padding: 8px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+<body>
+<!--header-->
+<div class="h">
+    <h1>TropGB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="../index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="../blast.html" >BLAST</a> </li>
+                <li><a href="../jbrowse.html">JBrowse</a></li>
+                <li><a href="../gene_search.html">Gene Search</a></li>
+                <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="../miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/sugercane.html">Various organs</a></li>
+                        <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/rubber.html">Various organs</a> </li>
+                        <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="../expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="../download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="../keygene/starch.html">Starch gene</a></li>
+                        <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="../keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="../helpyou.html">FAQ</a> </li>
+                <li><a href="../helpus.html">Contact us</a></li>
+                <li><a href="../conference.html">Conferences</a></li>
+                <li><a href="../links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="content m">
+    <div class="sp" style="width: 100%;height: 170px;">
+        <div class="sp_img" style=" margin-left: 10px;float: left;border: 2px ridge #92b99f;margin-top: 10px;">
+            <div>
+                <img src="../static/images/rubber-tree.jpg" width="254" height="154">
+            </div>
+        </div>
+        <div class="sp_name" style="margin-left: 200px;float: left;margin-top: 40px;">
+            <h1><i>Rubber</i>&nbsp;/橡胶</h1>
+        </div>
+    </div>
+    <div class="sp_tax">
+        <h3><strong>Taxonomy:&nbsp;&nbsp;&nbsp;</strong> Magnoliopsida / Rosidae / Rosanae / Malpighiales / Euphorbiaceae / <i>Hevea</i> /<i>Hevea brasiliensis</i> </strong></h3>
+    </div>
+    <div class="sp_int" style="font-size: 18px">
+        <p><h3><strong>Introduction</strong></h3></p>
+        <p>1. <i>Hevea brasiliensis</i>, the Pará rubber tree, sharinga tree, seringueira, or most commonly, rubber tree or rubber plant, is a flowering plant belonging to the spurge family Euphorbiaceae originally native to the Amazon basin, but is now pantropical in distribution due to introductions</p>
+        <p>2. <i>Hevea brasiliensis</i> is a tall deciduous tree growing to a height of up to 43 m (141 ft) in the wild. Cultivated trees are usually much smaller because drawing off the latex restricts their growth.</p>
+        <p>3. In the wild the tree can reach a height of up to 140 feet (43 m). The white or yellow latex occurs in latex vessels in the bark, mostly outside the phloem.  </p>
+        <p>4. The rubber tree takes between seven and ten years to deliver the first harvest.</p>
+        <p>5. The South American rubber tree grew only in the Amazon rainforest, and increasing demand and the discovery of the vulcanization procedure in 1839 led to the rubber boom in that region, enriching the cities of Belém, Santarém, and Manaus in Brazil and Iquitos, Peru, from 1840 to 1913. In Brazil, before the name was changed to 'Seringueira' the initial name of the plant was 'pará rubber tree', derived from the name of the province of Grão-Pará. In Peru, the tree was called 'árbol del caucho', and the latex extracted from it was called 'caucho'.</p>
+    </div>
+    <h3>Genomic Version Information</h3>
+
+    <!-- Dropdown for genomic version selection -->
+    <label for="genomic-version">Select Genomic Version:</label>
+    <select id="genomic-version" onchange="window.location.href=this.value;">
+        <option value="">Select a version</option>
+        <option value="natural_rubber.html">Hevea brasiliensis GT1</option>
+        <option value="rubbertree.html">Hevea brasiliensis MT/VB/25A 57/8</option>
+    </select>
+    <div class="sp_gene" style="font-size: 18px">
+        <h3 style="color: #7e9f89 "><strong><i>Hevea brasiliensis MT/VB/25A 57/8</i></strong></h3>
+        <h4><strong>Summary</strong></h4>
+        <p>The rubber tree (<i>Hevea brasiliensis</i>) is grown in tropical regions and is the major source of natural rubber. Using traditional breeding approaches, the latex yield has increased by sixfold in the last century. However, the underlying genetic basis of rubber yield improvement is largely unknown. Here, we present a high-quality, chromosome-level genome sequence of the wild rubber tree, the first report on selection signatures and a genome-wide association study (GWAS) of its yield traits. Population genomic analysis revealed a moderate population divergence between the Wickham clones and wild accessions. Interestingly, it is suggestive that H. brasiliensis and six relatives of the Hevea genus might belong to the same species. The selective sweep analysis found 361 obvious signatures in the domesticated clones associated with 245 genes. In a 15-year field trial, GWAS identified 155 marker–trait associations with latex yield, in which 326 candidate genes were found. Notably, six genes related to sugar transport and metabolism, and four genes related to ethylene biosynthesis and signalling are associated with latex yield. The homozygote frequencies of the causal nonsynonymous SNPs have been greatly increased under selection, which may have contributed to the fast latex yield improvement during the short domestication history. Our study provides insights into the genetic basis of the latex yield trait and has implications for genomic-assisted breeding by offering valuable resources in this new domesticated crop.</p>
+        <h4><strong>Genome Information</strong></h4>
+        <table>
+            <tr><td>Genome size</td><td>1.9 Gb</td></tr>
+            <tr><td>Total ungapped length</td><td>1.7 Gb</td></tr>
+            <tr><td>Number of chromosomes</td><td>18</td></tr>
+            <tr><td>Number of organelles</td><td>0</td></tr>
+            <tr><td>Number of scaffolds</td><td>754</td></tr>
+            <tr><td>Scaffold N50</td><td>101.7 Mb</td></tr>
+            <tr><td>Scaffold L50</td><td>9</td></tr>
+            <tr><td>Number of contigs</td><td>2,181</td></tr>
+            <tr><td>Contig N50</td><td>3.2Mb</td></tr>
+            <tr><td>Contig L50</td><td>147</td></tr>
+            <tr><td>GC percent</td><td>34.5</td></tr>
+            <tr><td>Genome coverage</td><td>300.0x</td></tr>
+        </table>
+        <h4><strong>Materials and methods</strong></h4>
+        <p>The rubber tree wild germplasm was used for de novo genome sequencing. The accession was collected from the Vila Bela district, Moto Crosso States, Brazil. The accession is characterized by low heterozygosity. One hundred and seven Wickham clones, 34 IRRDB 1981’ wild germplasm accessions and six species of the Hevea genus were used for a population study. The wild germplasms were primarily collected from Acre (AC), Moto Crosso (MT) and Rondonia (RO) in Brazil (IRRDB 1981 expedition). We selected 11 RO, 10 MT, 11AC and two other accessions to study the germplasm evolution. These accessions represent the genetic diversity in the regions of Hevea origin and the major rubber tree plantations. The rubber trees are planted in the National Rubber Tree Germplasm Repository (Danzhou, Hainan, 19°52′N, 109°50′E, South China, 2006–2007).</p>
+        <p>The rubber tree natural population resequencing was conducted at Biomarker, China. The sequencing process was performed on a NovaSeq 6000 platform according to the standard protocol outlined by Illumina. The raw reads were filtered to eliminate the reads with adapters (Phred score<10, or N>10%). The clean reads were then mapped to the compiled reference genome using BWA, and the statistics were assessed. The SNPs were called using an accelerated GATK HaplotypeCaller program. The SNP calling was accelerated using a Sentieon-genomic pipeline . For single-sample SNP and genotype calling, several filtering steps were performed to remove: InDels with quality scores <30, SNPs with more than two alleles, SNPs at or within 5 bp from InDels, SNPs with genotyping quality scores (GQ) <10 and SNPs with extremely low or extremely high coverage. The obtained SNPs were finally annotated with SnpEff v4.3t.</p>
+        <p>For the population study, the VCF files were filtered to remove InDels, nonbiallelic SNPs and SNPs with a missing rate>90%. Population structure was analysed using the maximum-likelihood approach implemented in ADMIXTURE v1.3.0. Individual-based clustering analysis was conducted and cross-validated to explore convergence. The optimum number of clusters was determined. The subgroup value was preset for the SNPs selected using PLINK2 v2.00a3LM to construct the neighbour-joining tree . The phylogenetic tree was constructed using the Kimura 2-parameter model using the MEGA5 software in the presence of 1000 bootstrap replicates . The interactive tree of life tool was used to display the neighbour-joining tree. PCA for all SNPs was conducted using EIGENSOFT , using the default parameters.</p>
+        <p>The genomic regions that underwent a putative selective sweep were investigated to identify genes under selection pressure. The candidate genes were annotated in functional categories based on GO and KEGG databases. The enriched GO terms of the genes that underwent positive or negative selections were assessed using the BiNGO 3.03 with GO_full categories. Overrepresented GO categories were enriched following a hypergeometric test. The significance threshold was set as 0.05 after a Benjamini and Hocheberg FDR correction.</p>
+        <h4><strong>Reference Publication(s)</strong></h4>
+        <p>Cheng H et al., "Chromosome-level wild <i>Hevea brasiliensis </i>genome provides new tools for genomic-assisted breeding and valuable loci to elevate rubber yield.", Plant Biotechnol J, 2023 May;21(5):1058-1072<a href="https://onlinelibrary.wiley.com/doi/10.1111/pbi.14018"> DOI:10.1111/pbi.14018</a> </p>
+    </div>
+</div>
+</body>
+</html>

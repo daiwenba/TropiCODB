@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sugar Cane Expression Visualization</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/gene_search.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="icon" href="../static/images/icon.png">
+    <script src="../static/js/jquery-3.7.1.min.js"></script>
+    <style>
+        #search-container {
+            margin: 20px;
+            position: relative;
+        }
+        #id-input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        #search-button {
+            padding: 5px;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+        #suggestions {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 200px;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        #suggestions div {
+            padding: 5px;
+            cursor: pointer;
+        }
+        #suggestions div:hover {
+            background-color: #f0f0f0;
+        }
+        #chart {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        #sugarcane-svg {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 3px;
+            display: none;
+            z-index: 1001;
+            pointer-events: none; /* 确保 tooltip 不会影响鼠标事件 */
+            font-size: 14px;
+        }
+        #color-scale {
+            width: 80%;
+            height: 20px;
+            margin: 20px auto;
+            background: linear-gradient(to right, yellow, red);
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        #color-scale-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        #color-scale-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 80%;
+            margin: 20px auto;
+        }
+        #min-label {
+            font-size: 12px;
+            width: 40px;
+            text-align: center;
+            position: absolute;
+        }
+        #max-label{
+            font-size: 12px;
+            width: 40px;
+            text-align: center;
+        }
+        #fpkm-label {
+            position: absolute;
+            right: 100px;
+            top: -20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="../index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="../blast.html" >BLAST</a> </li>
+                <li><a href="../jbrowse.html">JBrowse</a></li>
+                <li><a href="../gene_search.html">Gene Search</a></li>
+                <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="../miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/sugercane.html">Various organs</a></li>
+                        <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/rubber.html">Various organs</a> </li>
+                        <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="../expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="../download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="../keygene/starch.html">Starch gene</a></li>
+                        <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="../keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="../helpyou.html">FAQ</a> </li>
+                <li><a href="../helpus.html">Contact us</a></li>
+                <li><a href="../conference.html">Conferences</a></li>
+                <li><a href="../links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div id="group" class="in_group m">
+    <div class="group-hd">
+        <h2>Sugarcane Expression</h2>
+    </div>
+    <div id="search-container">
+        <input type="text" id="id-input" placeholder="Search ID">
+        <button id="search-button">Search</button>
+        <div id="suggestions"></div>
+    </div>
+    <div id="chart">
+        <object id="sugarcane-svg" data="sugarcane.svg" type="image/svg+xml"></object>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+    <div id="color-scale-container">
+        <div id="min-label">0</div>
+        <div id="color-scale"></div>
+        <div id="max-label">Max</div>
+        <div id="fpkm-label">FPKM</div>
+    </div>
+</div>
+</div>
+
+<script>
+    function fetchIds(query, callback) {
+        $.ajax({
+            url: 'sugarcane_getid.php',
+            method: 'GET',
+            data: { query: query },
+            success: function (data) {
+                callback(JSON.parse(data));
+            },
+            error: function (xhr, status, error) {
+                console.error('获取 ID 列表失败: ', error);
+            }
+        });
+    }
+
+    function fetchData(id) {
+        $.ajax({
+            url: 'fetch_sugarcane_expression.php',
+            method: 'POST',
+            data: { id: id },
+            success: function (data) {
+                var parsedData = JSON.parse(data);
+                if (!parsedData.error) {
+                    renderChart(parsedData);
+                } else {
+                    alert(parsedData.error);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('数据获取失败: ', error);
+            }
+        });
+    }
+
+    function getColor(value, maxValue) {
+        if (value === 0) {
+            return 'rgba(255, 255, 0, 0.7)';
+        } else if (value === maxValue) {
+            return 'rgba(255, 0, 0, 0.7)';
+        } else if (value >= maxValue * 0.75) {
+            return 'rgba(255, 102, 102, 0.7)';
+        } else if (value >= maxValue * 0.5) {
+            return 'rgba(255, 153, 51, 0.7)';
+        } else {
+            return 'rgba(255, 204, 0, 0.7)';
+        }
+    }
+
+    function renderChart(data) {
+        const { Root, Epidermis, Pith, Leaf } = data;
+        const maxValue = Math.max(Root, Epidermis, Pith, Leaf);
+        const minValue = Math.min(Root, Epidermis, Pith, Leaf);
+        document.getElementById('min-label').textContent = minValue;
+        document.getElementById('max-label').textContent = maxValue;
+        const svgObject = document.getElementById('sugarcane-svg');
+        const svgDoc = svgObject.contentDocument;
+
+        if (!svgDoc) {
+            console.error('无法加载 SVG 文档');
+            return;
+        }
+
+        const elements = [
+            { class: 'Root', value: Root, label: 'Root' },
+            { class: 'Epidermis', value: Epidermis, label: 'Epidermis' },
+            { class: 'Pith', value: Pith, label: 'Pith' },
+            { class: 'Leaf', value: Leaf, label: 'Leaf' },
+
+        ];
+
+        elements.forEach(({ class: className, value, label }) => {
+            const svgElements = svgDoc.getElementsByClassName(className);
+            if (svgElements.length) {
+                const color = getColor(value, maxValue);
+                Array.from(svgElements).forEach((element) => {
+                    element.setAttribute('stroke', 'black');
+                    element.setAttribute('fill', color);
+                    element.setAttribute('data-value', value);
+                    element.setAttribute('data-label', label);
+
+                    element.addEventListener('mousemove', (event) => {
+                        const tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'block';
+                        tooltip.innerHTML = `<strong>${label}</strong><br>Value: ${value}`;
+
+                        tooltip.style.left = (event.pageX + 10) + 'px';
+                        tooltip.style.top = (event.pageY + 10) + 'px';
+                    });
+
+                    element.addEventListener('mouseleave', () => {
+                        const tooltip = document.getElementById('tooltip');
+                        tooltip.style.display = 'none';
+                    });
+                });
+            } else {
+                console.warn(`未找到类名为 ${className} 的 SVG 元素`);
+            }
+        });
+    }
+
+    document.getElementById('search-button').addEventListener('click', function () {
+        const id = document.getElementById('id-input').value.trim();
+        if (id) {
+            fetchData(id);
+        } else {
+            resetChart();
+        }
+    });
+
+    document.getElementById('id-input').addEventListener('input', function () {
+        const query = this.value.trim();
+        if (query) {
+            fetchIds(query, function (ids) {
+                const suggestions = document.getElementById('suggestions');
+                suggestions.innerHTML = '';
+                ids.forEach(function (suggestion) {
+                    const div = document.createElement('div');
+                    div.textContent = suggestion;
+                    div.onclick = function () {
+                        document.getElementById('id-input').value = suggestion;
+                        suggestions.innerHTML = '';
+                        fetchData(suggestion);
+                    };
+                    suggestions.appendChild(div);
+                });
+            });
+        } else {
+            document.getElementById('suggestions').innerHTML = '';
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const svgObject = document.getElementById('sugarcane-svg');
+        svgObject.addEventListener('load', function () {
+            const svgDoc = svgObject.contentDocument;
+
+            const paths = svgDoc.querySelectorAll('path');
+            paths.forEach(path => {
+                path.setAttribute('stroke', 'black');
+                path.setAttribute('fill', 'none');
+            });
+        });
+    });
+</script>
+</body>
+</html>

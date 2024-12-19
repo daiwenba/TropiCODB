@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropDB</title>
+    <!--Bootstrap core css-->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/gene_search.css">
+    <link rel="icon" href="static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/chart.js"></script>
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/chart.esm.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="./species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./blast.html" >BLAST</a> </li>
+                <li><a href="./jbrowse.html">JBrowse</a></li>
+                <li><a href="./gene_search.html">Gene Search</a></li>
+                <li><a href="./gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="./miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="expression/sugercane.html">Various organs</a></li>
+                        <li><a href="expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="expression/rubber.html">Various organs</a> </li>
+                        <li><a href="expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="./variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="./metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="./phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="./phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="./download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="keygene/starch.html">Starch gene</a></li>
+                        <li><a href="keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="./helpyou.html">FAQ</a> </li>
+                <li><a href="./helpus.html">Contact us</a></li>
+                <li><a href="conference.html">Conferences</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+    <script language="JavaScript">
+      function test(textOne){
+      document.all.textOne.value=textOne.value
+      }
+    </script>
+<div id="group" class="in_group m">
+    <div class="group-hd">
+        <h2>Gene Search</h2>
+    </div>
+         <div class="widget-content" >
+             <p style="text-indent:2em">Select the 9 species of tropical crops and click the example button. It will offer you a typical gene of the species then you can get the detail information by clicking the search button.
+                 The detail information including the <b>introduction, CDS sequence, PEP sequence, KEGG, gene family, signal protein, Go annotation and expression.</b></p>
+
+             <br><p style="text-indent:2em">The source of these data:
+            <h4><small> <i>Manihot esculenta</i>:     Daniell H.et al. 2016</small></h4>
+             <h4><small><i>Saccharum_hybrid_cultivar</i>:    Healey AL.et al. 2024</small></h4>
+             <h4><small><i>Elaeis guineensis</i>:    Singh R. et al. 2012</small></h4>
+            <h4><small><i>Olea europaea</i>:   Guodong Rao.et al. 2021</small></h4>
+            <h4><small><i>Hibiscus cannabinus</i>:     Liwu Zhang.et al. 2020</small></h4>
+            <h4><small><i>Ricinus communis</i>:    Lu J.et al. 2016</small></h4>
+            <h4><small><i>Bombax ceiba</i>:       Shao L.et al. 2024</small></h4>
+            <h4><small><i>Hevea brasiliensis</i>:       Liu J.et al. 2020</small></h4>
+             <form action="search_result.php" class="form-search" method="post" style="margin-top:20px;">
+              <div class="form-group"></br>
+                  <h4 style="float: left"><b>Species</b></h4>
+                  <h4 style="margin-left: 195px"><b>Gene ID</b></h4>
+                  <select id="sel" class="special-form"  onChange="test(this)">
+                    <option value="" selected="selected">--Please Select--</option>
+                      <option value="Manes.14G103200.1">Manihot esculenta</option>
+                    <option value="SoffiXsponR570.10Ag001300.1">Saccharum_hybrid_cultivar</option>
+                    <option value="XP_010915955.1">Elaeis guineensis</option>
+                    <option value="XP_022878393.1">Olea europaea</option>
+                    <option value="GWHPACDB000026.1">Hibiscus cannabinus</option>
+                    <option value="XP_015577406.2">Ricinus communis</option>
+                    <option value="Cp04G0157.1">Bombax ceiba</option>
+                    <option value="KAF2316013.1">Hevea brasiliensis</option>
+                </select>
+                <input class="special-form"  type="text" id="textOne" name="gene_id" onmouseover="this.focus();this.select();" onclick="my_click(this, 'textOne');" onBlur="my_blur(this, 'textOne');" />
+              </div>
+                <button class="btn btn-success" type="button" id="example" style="color:gray; background-color:#dff0d8;border:white" value="clear" onclick="document.getElementById('textOne').value='';document.getElementById('sel').value='';">Clear All</button>
+                <button type="submit" class="btn btn-success" style="margin-left:15px;">Search</button>
+            </form>
+        </div>
+    </div>
+<div class="footer m">
+    <p> Hainan University, Sanya, Hainan, China | 2024</p>
+</div>
+</body>
+</html>

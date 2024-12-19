@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropGD</title>
+    <!--Bootstrap core css-->
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/gene_search.css">
+    <link rel="icon" href="../static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/chart.js"></script>
+    <script src="../static/js/chart.min.js"></script>
+    <script src="../static/js/chart.esm.js"></script>
+</head>
+<style>
+    select {
+        font-size: 16px;
+        padding: 8px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+<body>
+<!--header-->
+<div class="h">
+    <h1>TropGB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="../index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="../blast.html" >BLAST</a> </li>
+                <li><a href="../jbrowse.html">JBrowse</a></li>
+                <li><a href="../gene_search.html">Gene Search</a></li>
+                <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="../miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/sugercane.html">Various organs</a></li>
+                        <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/rubber.html">Various organs</a> </li>
+                        <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="../expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="../download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="../keygene/starch.html">Starch gene</a></li>
+                        <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="../keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="../helpyou.html">FAQ</a> </li>
+                <li><a href="../helpus.html">Contact us</a></li>
+                <li><a href="../conference.html">Conferences</a></li>
+                <li><a href="../links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="content m">
+    <div class="sp" style="width: 100%;height: 170px;">
+        <div class="sp_img" style=" margin-left: 10px;float: left;border: 2px ridge #92b99f;margin-top: 10px;">
+            <div>
+                <img src="../static/images/cassava.jpg" width="254" height="154">
+            </div>
+        </div>
+        <div class="sp_name" style="margin-left:200px;float: left;margin-top: 40px;">
+            <h1><i>Cassava</i>/木薯</h1>
+        </div>
+    </div>
+    <div class="sp_tax" >
+        <h3><strong>Taxonomy:&nbsp;&nbsp;&nbsp;</strong> Magnoliopsida / Rosidae /  Rosanae / Malpighiales / Euphorbiaceae / <i>Manihot </i>/<i>Manihot esculenta</i></h3>
+    </div>
+    <div class="sp_int" style="font-size: 18px">
+        <p><h3><strong>Introduction</strong></h3></p>
+        <p>1. <i>Manihot esculenta</i>, commonly called cassava , manioc, yuca, or tapioca is a woody shrub of the spurge family, Euphorbiaceae, native to South America, from Brazil and parts of the Andes.</p>
+        <p>2.Cassava is the third-largest source of food carbohydrates in the tropics, after rice and maize. </p>
+        <p>3. Cassava is classified as either sweet or bitter. Like other roots and tubers, both bitter and sweet varieties of cassava contain antinutritional factors and toxins, with the bitter varieties containing much larger amounts. </p>
+        <p>4. The cassava root is long and tapered, with a firm, homogeneous flesh encased in a detachable rind, about 1 millimetre (1⁄16 inch) thick, rough and brown on the outside. </p>
+        <p>5. Wild populations of M. esculenta subspecies flabellifolia, shown to be the progenitor of domesticated cassava, are centered in west-central Brazil, where it was likely first domesticated no more than 10,000 years ago.</p>
+    </div>
+    <h3>Genomic Version Information</h3>
+    <!-- Dropdown for genomic version selection -->
+    <label for="genomic-version">Select Genomic Version:</label>
+    <select id="genomic-version" onchange="window.location.href=this.value;">
+        <option value="">Select a version</option>
+        <option value="cassava6.1.html">Manihot esculenta v6.1</option>
+        <option value="cassava7.1.html">Manihot esculenta v7.1</option>
+        <option value="cassava8.1.html">Manihot esculenta v8.1</option>
+        <option value="cassavaT2T.html">Manihot esculenta T2T</option>
+    </select>
+    <div class="sp_gene" style="font-size: 18px">
+        <h3><strong><i>Manihot esculenta</i> v7.1</strong></h3>
+        <p><h4><strong>Genome Overview</strong></h4></p>
+        <p>Cassava (<i>Manihot esculenta Crantz</i>) is grown throughout tropical Africa, Asia and the Americas for its starchy storage roots, and feeds an estimated 1 billion people each day. Farmers choose it for its high productivity and its ability to withstand a variety of environmental conditions (including significant water stress) in which other crops fail. However, it has low protein content, and is susceptible to a range of biotic stresses. Despite these problems, the crop production potential for cassava is enormous, and its capacity to grow in a variety of environmental conditions makes it a plant of the future for emerging tropical nations. Cassava is also an excellent energy source - its roots contain 20-40% starch that costs 15-30% less to produce per hectare than starch from corn, making it an attractive and strategic source of renewable energy.</p>
+        <p>The cassava genome project built upon a pilot initiated through the DOE-JGI Community Sequencing Program (CSP) by a 14-member consortium led by Claude Fauquet, Joe Tohme and Pablo Rabinowicz. This pilot project produced a little under 1× coverage from over 700,000 Sanger shotgun reads using plasmid and fosmid libraries, and it provided insights into the overall characteristics of the cassava genome, and a valuable source of Sanger paired-end sequences to be used later. Next, a draft 454-based assembly (v4) was generated in a project led by Steve Rounsley, Dan Rokhsar, Chinnappa Kodira, and Tim Harkins. This began in Spring 2009 when 454 Life Sciences, a Roche company partnered with DOE-JGI to provide the resources for a whole genome shotgun sequencing of cassava using the 454 GS FLX Titanium platform.</p>
+        <p>The version 6 assembly improved the contiguity and completeness of the AM560-2 genome by starting afresh with high-quality Illumina-based contig sequences ordered and oriented into scaffolds using newly-introduced mate-pair and fosmid-end jumping libraries and Dovetail Genomics in-vitro proximity ligation sequences. The scaffolds were then anchored onto chromosomes with a high-resolution genetic linkage map (International Cassava Genetic Map Consortium, 2014).</p>
+        <p>This assembly (v7) was constructed following the same strategy, but now with more contiguous underlying sequences assembled de novo from Pacific Biosciences (PacBio) single-molecule real-time (SMRT) continuous long-read (CLR) data. This assembly was supported by grants to Steve Rounsley (Univ. of Arizona), Dan Rokhsar (DOE-JGI, UC Berkeley), and Jean-Luc Jannink (Cornell Univ., NextGen Cassava) from the Bill & Melinda Gates Foundation and UKAID/DFID (OPPGD1493 and OPP1048542).</p>
+        <table style="width: 100%">
+            <h4>Genome Information</h4>
+            <tr><td>Assembly Source:</td><td>UC Berkeley</td></tr>
+            <tr><td>Assembly Version:</td><td>v7</td></tr>
+            <tr><td>Annotation Source:</td><td>JGI</td></tr>
+            <tr><td>Annotation Version:</td><td>v7.1</td></tr>
+            <tr><td>Total Scaffold Length (bp):</td><td>669,368,850</td></tr>
+            <tr><td>Number of Scaffolds:</td><td>899</td></tr>
+            <tr><td>Min. Number of Scaffolds containing half of assembly (L50):</td><td>10</td></tr>
+            <tr><td>Shortest Scaffold from L50 set (N50):</td><td>33,084,714</td></tr>
+            <tr><td>Total Contig Length (bp):</td><td>667,249,289</td></tr>
+            <tr><td>Number of Contigs:</td><td>2,460</td></tr>
+            <tr><td>Min. Number of Contigs containing half of assembly (L50):</td><td>276</td></tr>
+            <tr><td>Shortest Contig from L50 set (N50):</td><td>693,312</td></tr>
+            <tr><td>Number of Protein-coding Transcripts:</td><td>66,486</td></tr>
+            <tr><td>Number of Protein-coding Genes:</td><td>33,849</td></tr>
+            <tr><td>Percentage of Eukaryote BUSCO Genes:</td><td>98.7</td></tr>
+            <tr><td>Percentage of Embroyphyte BUSCO Genes:</td><td>98.1</td></tr>
+        </table>
+        <h4>Sequencing, Assembly, and Annotation</h4>
+        <p>Sequence data were generated from a partially inbred (third generation self, or S3, of MCOL1505) line called AM560-2 which was generated at the International Center for Tropical Agriculture (CIAT) in Cali, Colombia by Hernan Ceballos. Previous assemblies v4 and v6 were based on the same accession.</p>
+        <p>Rebecca Bart's group at the Donald Danforth Plant Science Center grew and collected etiolated AM560-2 leaves, from which high molecular weight genomic DNA was extracted into low melting agarose plugs by Julia Vrebalov at the Boyce Thompson Institute. DNA was also extracted from fresh leaf tissue by Jessica B. Lyons (UC Berkeley) using the CTAB method. These DNAs were sent to the University of California, Davis DNA Technologies & Expression Analysis Core and sequenced with PacBio RSII machines using P6-C4 chemistry. The resulting 73.3 Gb of CLR data produced, representing 97.7× depth of sequencing coverage, was used as input for assembly.</p>
+        <p>Contig sequences were constructed with Canu v1.6 (Koren et al., 2017). The median depth of coverage for each contig was used to identify sequence redundancy between two or more contigs, and sequence alignment used to identify the extent of overlap. Shorter redundant sequences were removed. Contigs were then formed into scaffolds with SSPACE v3 (Boetzer et al., 2011) using the mate-pair and fosmid-end sequences generated previously (Bredeson et al., 2016), which were further ordered and oriented along the 22.4k marker framework map (International Cassava Genetic Map Consortium (ICGMC), 2015) into chromosome-scale superscaffolds. Lastly, the assembly was polished to remove base-level errors using Arrow (Chin et al., 2013) and FreeBayes v1.1.0-54-g49413aa (Garrison & Marth, 2012) with 121× of Illumina whole-genome shotgun paired-end sequences. The vast majority of the assembly (605.7 Mb of 667.2 Mb (90.8%)) could be anchored to the 18 chromosomes.</p>
+        <p>Although cassava has an estimated genome size of ~772 Mbp (Awoleye et al., 1994), this assembly spans only 669.4 Mbp. Despite the discrepancy, we believe that the assembly represents nearly all of the genic regions of the genome (see below), and that the missing portion is repetitive sequence that could not so far be assembled.</p>
+        <p>We were able to map 95.6% of the 122.7k EST sequences available in the NCBI nucleotide database, showing near-complete coverage of protein-coding genes in the assembly.</p>
+        <p>In order to find and mask repeats in the genome sequence, RepeatModeler v1.0.8 (Smit & Hubley, 2008-2015) was run on the v7 assembly and generated 1,122 repetitive sequences (median length 178 bp and totaling 1,405,165 bp). Over half of these sequences were unknown, but ~37% could be classified LTR; ~7% DNA and ~3% LINE/SINE elements. Nonetheless, the software is unaware that plants contain large families of genes with similar sequence and these often are included in the putative repeat library. In order to remove these gene-like sequences from the repeat library, PFAM and PANTHER annotations were predicted on the repeat sequences and those with annotations known to correspond to genes were removed from the repeat library. The remaining 929 sequences were combined with cassava sequences in RepBase and used to mask the genome with RepeatMasker (Smit et al., 2013-2015). This masked 60.2% of the genome.</p>
+        <h4>Gene prediction</h4>
+        <p>To produce the current "Cassava v7.1" gene set, we used the homology-based gene prediction programs FgenesH and GenomeScan, along with the PASA program to integrate expression information from cassava ESTs and RNA-Seq.</p>
+        <p>Transcript assemblies were made from 0.8B pairs of 2×150, 1.2B pairs of 2×100 paired-end Illumina RNA-seq reads, and approximately 5M Roche 454 reads using PERTRAN (Shu, unpublished). PASA (Haas et al., 2003) constructed 173,456 transcript assemblies from NCBI ESTs, and the RNA-seq transcript assemblies above. Loci were determined by transcript assembly alignments and/or EXONERATE (Slater & Birney, 2005) alignments of proteins from arabi (Arabidopsis thaliana), soybean, poplar, Kitaake rice, sorghum, Setaria viridis, grape, and Swiss-Prot proteomes to repeat-soft-masked Manihot esculenta genome using RepeatMasker with up to 2kb extension on both ends unless extending into another locus on the same strand. Repeat library consists of do novo repeats by RepeatModeler on <i>Manihot esculenta</i> genome and M. esculenta repeats in RepBase. Gene models were predicted by homology-based predictors, FGENESH+ (Salamov & Solovyev, 2000), FGENESH_EST (similar to FGENESH+, EST as splice site and intron input instead of protein/translated ORF), and EXONERATE, PASA assembly ORFs (in-house homology constrained ORF finder) and from AUGUSTUS via BRAKER1 (Hoff et al., 2016). The best scored predictions for each locus are selected using multiple positive factors including EST and protein support, and one negative factor: overlap with repeats. The selected gene predictions were improved by PASA. Improvement includes adding UTRs, splicing correction, and adding alternative transcripts. PASA-improved gene model proteins were subject to protein homology analysis to above mentioned proteomes to obtain Cscore and protein coverage. Cscore is a protein BLASTP score ratio to MBH (mutual best hit) BLASTP (Altschul et al., 1990; Camacho et al., 2009) score and protein coverage is the highest percentage of protein aligned to the best of homologs. PASA-improved transcripts were selected based on Cscore, protein coverage, EST coverage, and its CDS overlapping with repeats. The transcripts were selected if its Cscore is larger than or equal to 0.5 and protein coverage larger than or equal to 0.5, or it has EST coverage, but its CDS overlapping with repeats is less than 20%. For gene models whose CDS overlaps with repeats for more that 20%, its Cscore must be at least 0.9 and homology coverage at least 70% to be selected. The selected gene models were subject to Pfam analysis and gene models whose protein is more than 30% in Pfam TE domains were removed and weak gene models. Incomplete gene models, low homology supported without fully transcriptome supported gene models and short single exon (< 300 BP CDS) without protein domain nor good expression gene models were manually filtered out. The quality of the protein-coding gene annotation was benchmarked using the BUSCO tool and OrthoDB9 embryophyta dataset (Simão et al., 2015; Zdobnov et al., 2017), estimating that 98.1% of BUSCOs are sampled completely, 0.9% are fragmented, and only 1.0% missing.</p>
+        <p>The v7 reference was assembled by Jessen V. Bredeson at UC Berkeley and annotated by Shengqiang Shu at DOE-JGI.</p>
+        <h4><strong>Reference Publication(s)</strong></h4>
+        <p>Bredeson, J. V., Lyons, J. B., Prochnik, S. E., Wu, G. A., Ha, C. M., Edsinger-Gonzales, E., … Rokhsar, D. S. (2016). Sequencing wild and cultivated cassava and related species reveals extensive interspecific hybridization and genetic diversity. Nature Biotechnology, 34(5), 562–570.<a href="https://doi.org/10.1038/nbt.3535">https://doi.org/10.1038/nbt.3535</a> </p>
+        <div class="footer m">
+            <p> Hainan University, Sanya, Hainan, China | 2023</p>
+    </div>
+</div>
+</div>

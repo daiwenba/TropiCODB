@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TropGD</title>
+  <!--Bootstrap core css-->
+  <link rel="stylesheet" href="../static/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="../static/css/gene_search.css">
+  <link rel="icon" href="../static/images/icon.png">
+  <!-- Bootstrap core JS-->
+  <script src="../static/js/jquery-3.2.1.min.js"></script>
+  <script src="../static/js/jquery.js"></script>
+  <script src="../static/js/bootstrap.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/chart.js"></script>
+  <script src="../static/js/chart.min.js"></script>
+  <script src="../static/js/chart.esm.js"></script>
+</head>
+<style>
+  select {
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+</style>
+<body>
+<!--header-->
+<div class="h">
+  <h1>TropGB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+  <ul class="shell">
+    <li class="botton">
+      <span ><a href="../index.html">Home</a> </span>
+    </li>
+    <!--<li class="botton">
+        <span>Species<span class="caret"></span></span>
+        <ul>
+            <li class="has-submenu">
+                <a href="#">Cassava</a>
+                <ul class="submenu">
+                    <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                    <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                    <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                    <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Sugarcane</a>
+                <ul class="submenu">
+                    <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                    <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                    <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                    <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Oil palm</a>
+                <ul class="submenu">
+                    <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                    <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                    <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                    <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Olive</a>
+                <ul class="submenu">
+                    <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                    <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                </ul>
+            </li>
+            <li><a href="./species/kenaf.html">Kenaf</a></li>
+            <li class="has-submenu">
+                <a href="#">Castor</a>
+                <ul class="submenu">
+                    <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                    <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                </ul>
+            </li>
+            <li><a href="./species/Kapok.html">Kapok</a></li>
+            <li class="has-submenu">
+                <a href="#">Rubber tree</a>
+                <ul class="submenu">
+                    <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                    <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                </ul>
+            </li>
+        </ul>
+    </li>-->
+    <li class="botton">
+      <span>Genome<span class="caret"></span></span>
+      <ul>
+        <li class="has-submenu">
+          <a href="#">Cassava</a>
+          <ul class="submenu">
+            <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+            <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+            <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+            <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Sugarcane</a>
+          <ul class="submenu">
+            <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+            <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+            <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+            <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+            <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Oil palm</a>
+          <ul class="submenu">
+            <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+            <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+            <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+            <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Olive</a>
+          <ul class="submenu">
+            <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+            <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+          </ul>
+        </li>
+        <li><a href="../species/kenaf.html">Kenaf</a></li>
+        <li class="has-submenu">
+          <a href="#">Castor</a>
+          <ul class="submenu">
+            <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+            <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Kapok</a>
+          <ul class="submenu">
+            <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+            <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Rubber tree</a>
+          <ul class="submenu">
+            <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+            <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+          </ul>
+        </li>
+        <li><a href="../blast.html" >BLAST</a> </li>
+        <li><a href="../jbrowse.html">JBrowse</a></li>
+        <li><a href="../gene_search.html">Gene Search</a></li>
+        <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+        <li><a href="../miRNA.php">miRNA Search</a></li>
+        <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+      </ul>
+    </li>
+    <li class="botton">
+      <span>Transcriptome<span class="caret"></span> </span>
+      <ul>
+        <li class="has-submenu">
+          <a href="#">Cassava</a>
+          <ul class="submenu">
+            <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+            <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Sugercane</a>
+          <ul class="submenu">
+            <li><a href="../expression/sugercane.html">Various organs</a></li>
+            <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+            <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Oil palm</a>
+          <ul class="submenu">
+            <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+            <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+            <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Kenaf</a>
+          <ul class="submenu">
+            <li><a href="../expression/kenaf.html">Various organs</a> </li>
+            <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#" >Rubber tree</a>
+          <ul class="submenu">
+            <li><a href="../expression/rubber.html">Various organs</a> </li>
+            <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+            <li><a href="../expression/rubber2.html">Drying process</a> </li>
+            <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">eFP-gene</a>
+          <ul class="submenu">
+            <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+            <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="botton">
+      <span>Variome<span class="caret"></span> </span>
+      <ul>
+        <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+        <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+        <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+      </ul>
+    </li>
+    <li class="botton">
+      <span>Metabolome<span class="caret"></span> </span>
+      <ul>
+
+        <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+        <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+        <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+      </ul>
+    </li>
+    <li class="botton">
+      <span>Phenomics<span class="caret"></span> </span>
+      <ul>
+        <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+        <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+      </ul>
+    </li>
+    <li class="botton">
+      <span><a href="../download.html">Downloads</a></span>
+    </li>
+    <li class="botton">
+      <span>Breeding<span class="caret"></span></span>
+      <ul>
+        <li class="has-submenu">
+          <a href="#">Key genes</a>
+          <ul class="submenu">
+            <li><a href="../keygene/starch.html">Starch gene</a></li>
+            <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+            <li><a href="../keygene/oil.html">Oil gene</a> </li>
+          </ul>
+        </li>
+        <li><a href="../guideRNA.html">GuideRNA</a> </li>
+      </ul>
+    </li>
+    <li class="botton">
+      <span>Help<span class="caret"></span></span>
+      <ul>
+        <li><a href="../helpyou.html">FAQ</a> </li>
+        <li><a href="../helpus.html">Contact us</a></li>
+        <li><a href="../conference.html">Conferences</a></li>
+        <li><a href="../links.html">Links</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="content m">
+  <div class="sp" style="width: 100%;height: 170px;">
+    <div class="sp_img" style=" margin-left: 10px;float: left;border: 2px ridge #92b99f;margin-top: 10px;">
+      <div>
+        <img src="../static/images/oilplam1.jpg" width="254" height="154">
+      </div>
+    </div>
+    <div class="sp_name" style="margin-left: 200px;float: left;margin-top: 40px;">
+      <h1><i>Oilpalm</i>&nbsp;/油棕</h1>
+    </div>
+  </div>
+  <div class="sp_tax">
+    <h3><strong>Taxonomy:&nbsp;&nbsp;&nbsp;</strong>Angiosperms / Monocots / Commelinids /Arecales /Arecaceae/Arecoideae/Cocoseae/<i>Elaeis</i></strong></h3>
+  </div>
+  <div class="sp_int" style="font-size: 18px">
+    <p><h3><strong>Introduction</strong></h3></p>
+    <p>1. Since palm oil contains more saturated fats than oils made from canola, corn, linseed, soybeans, safflower, and sunflowers, it can withstand extreme deep-frying heat and resists oxidation</p>
+    <p>2. It contains no trans fat, and its use in food has increased as food-labelling laws have changed to specify trans fat content. </p>
+    <p>3. Human use of oil palms may date back to about 5,000 years in coastal west Africa. </p>
+    <p>4. <i>Elaeis guineensis</i> is now extensively cultivated in tropical countries outside Africa, particularly Malaysia and Indonesia which together produce most of the world supply.</p>
+    <p>5. Palm oil is typically considered the most controversial of the cooking oils - for both health and environmental reasons.</p>
+  </div>
+  <h3>Genomic Version Information</h3>
+
+  <!-- Dropdown for genomic version selection -->
+  <label for="genomic-version">Select Genomic Version:</label>
+  <select id="genomic-version" onchange="window.location.href=this.value;">
+    <option value="">Select a version</option>
+    <option value="oil_plam.html">Elaeis guineensis EG5</option>
+    <option value="oilpalm1.html">Elaeis guineensis EGPMv6</option>
+    <option value="oilpalm2.html">Elaeis guineensis EGV3</option>
+    <option value="oilpalm3.html">Elaeis guineensis EG11</option>
+  </select>
+  <div class="sp_gene" style="font-size: 18px">
+    <h3><strong><i>Elaeis guineensis EG11</i></strong></h3>
+    <h4><strong>Genome Overview</strong></h4>
+    <p><i>Elaeis guineensis</i> and E. oleifera are the two species of oil palm. E. guineensis is the most widely cultivated commercial species, and introgression of desirable traits from E. oleifera is ongoing. We report an improved E. guineensis genome assembly with substantially increased continuity and completeness, as well as the first chromosome-scale E. oleifera genome assembly. Each assembly was obtained by integration of long-read sequencing, proximity ligation sequencing, optical mapping, and genetic mapping. High interspecific genome conservation is observed between the two species. The study provides the most extensive gene annotation to date, including 46,697 E. guineensis and 38,658 E. oleifera gene predictions. Analyses of repetitive element families further resolve the DNA repeat architecture of both genomes. Comparative genomic analyses identified experimentally validated small structural variants between the oil palm species and resolved the mechanism of chromosomal fusions responsible for the evolutionary descending dysploidy from 18 to 16 chromosomes.</p>
+    <h4><strong>Genome Information</strong></h4>
+    <table>
+      <tr><td>Genome size</td><td>1.8Gb</td></tr>
+      <tr><td>Total ungapped length</td><td>1.7 Gb</td></tr>
+      <tr><td>Number of chromosomes</td><td>16</td></tr>
+      <tr><td>Number of scaffolds</td><td>29</td></tr>
+      <tr><td>Scaffold N50</td><td>128.3Mb</td></tr>
+      <tr><td>Scaffold L50</td><td>7</td></tr>
+      <tr><td>Number of contigs</td><td>37,553</td></tr>
+      <tr><td>Contig N50</td><td>239.2kb</td></tr>
+      <tr><td>Contig L50</td><td>1,923</td></tr>
+      <tr><td>GC percent</td><td>38.5</td></tr>
+      <tr><td>Genome coverage</td><td>60.0x</td></tr>
+    </table>
+    <h4><strong>Sequencing, Assembly, and Annotation</strong></h4>
+    <p>The E. guineensis (AVROS pisifera fruit form) and E. oleifera reference genomes were sequenced to 60× and 48× coverage of reads ≥ 10 Kb by PacBio Sequel sequencing, respectively. The specific oil palms used for genome sequencing are the same as those used for the initial E. guineensis reference genome assembly (P5) and E. oleifera draft reference genome (O7) (Singh, Ong-Abdullah, et al. 2013). Both species underwent proximity ligation sequencing (HiC and Chicago) by Dovetail Genomics, as well as Bionano optical mapping (McDonnell Genome Institute at Washington University in St. Louis, MO, USA).</p>
+    <p>In preparation for the assembly, E. guineensis PacBio reads were subsampled down to 10 Kb or longer. The ≥ 10 Kb reads were then subsampled to 60x coverage of the expected 1.8-Gb genome size. SMRT Link, the PacBio analysis web application, was then used to run the Falcon pipeline resulting in P11a genome build. The resulting assembly was then polished using Quiver. After this, the resulting assembly was sent to Dovetail Genomics for Chicago and HiC assembly, designated as P11b and P11c builds, respectively. Bionano optical mapping was conducted using the Saphyr software to correct the assembly a final time, resulting in the P11d2 build (Supplementary Table 1). Bionano can use the physical DNA to estimate the distance between tagged sites and add a proportional amount of N's for the gaps. E. oleifera PacBio reads were loaded into SMRT Link and were filtered down to a set of reads that were ≥ 10 Kb. The reads were further subsampled for use in WTDBG2, resulting in 3,078,930 reads with 47× coverage. WTDBG2 was then run according to the default pipeline, which involved aligning the reads to themselves to create a consensus. The consensus was then aligned with 8 Kb Illumina linker libraries, and a new consensus called. This polishing step was carried out twice. The O12a assembly was then sent to Dovetail Genomics for Chicago (O12b build) and HiC (O12c build) assembly using HiRise. At this point, the original assembly was broken and joined according to the long-distance read information. The O12c assembly was then corrected using Bionano scaffolding, where the scaffolds were broken and joined according to the optical map, resulting In the O12d build. The O12d build was polished with Illumina linker library reads to generate O12e2 build (Supplementary Table 1). The resulting assemblies were quality control tested using Merqury (Rhie et al. 2020) and LTR Assembly Index (LAI) program (Ou et al. 2018). The LAI program uses the output of LTRharvest (Ellinghaus et al. 2008), LTR_FINDER_ parallel (Ou and Jiang 2019), and LTR_retriever (Ou and Jiang 2018) to estimate LTR assembly index. LTR_FINDER_ parallel and LTRharvest were run using default values. BUSCO5 (genome mode) (Seppey et al. 2019) analysis was carried out using the Liliopsida profiles.</p>
+    <p>Gene ontology, enzyme code, EggNOG orthologs, and KEGG pathway annotations of the transcripts were determined using the following procedure. Protein sequences translated from the CDS of transcripts were searched for protein homology using BLASTP (e-value cutoff: 1e-5) against the GenBank RefSeq protein database, followed by the GenBank non-redundant (nr) protein database for gene models with no significant hit to RefSeq sequences. The BLASTP searches were limited to proteins that were listed under the embryophyte (txid3193) but not Elaeis (txid51952) taxonomy, and not annotated as hypothetical, predicted, uncharacterized, unnamed, unknown, low quality, or partial genes. The filtered RefSeq and nr datasets downloaded on 18-Feb-2022 consisted of 4,339,261 and 8,884,589 proteins, respectively. InterProScan (Jones et al. 2014) was used to search for protein functions in the following databases: CDD-3.18, Coils-2.2.1, Gene3D-4.3.0, Hamap-2020_05, MobiDBLite-2.0, PANTHER-15.0, Pfam-33.1, Phobius-1.01, PIRSF-3.10, PIRSR-2021_02, PRINTS-42.0, ProSitePatterns-2021_01, ProSiteProfiles-2021_01, SFLD-4, SignalP_EUK-4.1, SMART-7.1, SUPERFAMILY-1.75, TIGRFAM-15.0, and TMHMM-2.0c. The BLASTP and InterProScan results in XML format were imported into OmicsBox to determine the final gene annotation.</p>
+    <h4><strong>Reference Publication(s)</strong></h4>
+    <p>Low EL et al., "Chromosome-scale <i>Elaeis guineensis</i> and E. oleifera assemblies: comparative genomics of oil palm and other Arecaceae.", G3 (Bethesda), 2024 Sep 4;14(9)<a href="https://academic.oup.com/g3journal/article/14/9/jkae135/7699123?login=false">DOI:10.1093/g3journal/jkae135</a></p>
+  </div>
+</div>
+</div>
+

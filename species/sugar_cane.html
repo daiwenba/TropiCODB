@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropGD</title>
+    <!--Bootstrap core css-->
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/gene_search.css">
+    <link rel="icon" href="../static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/chart.js"></script>
+    <script src="../static/js/chart.min.js"></script>
+    <script src="../static/js/chart.esm.js"></script>
+</head>
+<style>
+    select {
+        font-size: 16px;
+        padding: 8px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+<body>
+<!--header-->
+<div class="h">
+    <h1>TropGB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="../index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="../blast.html" >BLAST</a> </li>
+                <li><a href="../jbrowse.html">JBrowse</a></li>
+                <li><a href="../gene_search.html">Gene Search</a></li>
+                <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="../miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/sugercane.html">Various organs</a></li>
+                        <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/rubber.html">Various organs</a> </li>
+                        <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="../expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="../download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="../keygene/starch.html">Starch gene</a></li>
+                        <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="../keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="../helpyou.html">FAQ</a> </li>
+                <li><a href="../helpus.html">Contact us</a></li>
+                <li><a href="../conference.html">Conferences</a></li>
+                <li><a href="../links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="content m">
+    <div class="sp" style="width: 100%;height: 170px;">
+     <div class="sp_img" style=" margin-left: 10px;float: left;border: 2px ridge #92b99f;margin-top: 10px;">
+						<div>
+                            <img src="../static/images/sugarcane.jpg" width="254" height="154">
+						</div>
+     </div>
+        <div class="sp_name" style="margin-left:200px;float: left;margin-top: 40px;">
+         <h1><i>Sugarcane</i>&nbsp;/甘蔗</h1>
+     </div>
+    </div>
+        <div class="sp_tax" >
+            <h3><strong>Taxonomy:&nbsp;&nbsp;&nbsp;</strong> Magnoliopsida / Liliidae / Commelinanae / Poales / Poaceae / <i>Saccharum</i> /<i>Saccharum officinarum</i></strong></h3>
+        </div>
+        <div class="sp_int" style="font-size: 18px">
+            <p><h3><strong>Introduction</strong></h3></p>
+           <p>1. Sugarcane, perennial tall solid herb. The rhizome is stout and well developed. The stalk height is 3-5 (-6) meters. ChinaTaiwan,Fujian,Guangdong,Hainan,Guangxi,Sichuan,Yunnanand so onThe tropicsWidely cultivated.</p>
+<p>2. Sugar cane istemperateandtropicCrops are manufacturedcane sugarand can be refinedethanolas an energy alternative. More than 100 countries around the world produce sugarcane, and the largest sugarcane producer isBrazil,IndiaandChina. </p>
+<p>3. Sugarcane is an annual or perennial tropical and subtropical herb that belongs to the C4 crop.  </p>
+<p>4. Sugar cane is a perennial tall solid herb. The rhizome is stout and well developed.</p>
+<p>5. Land preparation is to provide a deep, loose and fertile soil condition for the growth of sugarcane, so as to fully meet the needs of its root growth, so that the root system can better play the role of absorbing water and nutrients. At the same time, land preparation can also reduce diseases, insects and weeds in sugarcane fields.</p>
+</div>
+    <h3>Genomic Version Information</h3>
+    <!-- Dropdown for genomic version selection -->
+    <label for="genomic-version">Select Genomic Version:</label>
+    <select id="genomic-version" onchange="window.location.href=this.value;">
+        <option value="">Select a version</option>
+        <option value="sugar_cane.html">Saccharum officinarum x spontaneum R570 v2.1</option>
+        <option value="sugarcane1.html">Saccharum spontaneum Np-X</option>
+        <option value="sugarcane2.html">Saccharum officinarum LApurple</option>
+        <option value="sugarcane3.html">Saccharum spontaneum AP85-441</option>
+        <option value="Saccharumrufipilum.html">Saccharumrufipilum</option>
+    </select>
+ <div class="sp_gene" style="font-size: 18px">
+     <h3 style="color: #7e9f89 "><strong> <i>Saccharum officinarum x spontaneum R570</i> v2.1</strong></h3>
+     <h4><strong>Genome Overview</strong></h4>
+     <p>Sugarcane (<i>Saccharum spp.</i>) was first domesticated approximately 8000 years ago and is one of the world's most valuable crops, responsible for 80% of the world's sugar production. Modern day cultivars are mainly derived from inter-specific hybridization, combining the desirable traits of high sugar production from Saccharum officinarum, with disease resistance, vigor and environmental adaptability of S. spontaneum. However, this breeding design has resulted in a large (2n = 10Gb) and highly complex genome that is highly redundant, aneuploid, and has approximately 12 copies of each chromosome which undergo frequent interspecific recombination.</p>
+     <p>Due to this complexity, the sugarcane community has focused on developing genomic resources on cultivar R570, which has broad environmental adaptability and is the best characterized sugarcane cultivar to date. The 10Gb genome of R570 was sequenced with a combination of different sequencing technologies and techniques, including a Bionano Optical map, genetic map derived from selfed offspring, single flow-sorted chromosomes, HiC libraries, and Ilumina and PacBio (CLR and HiFi) libraries. The genome assembly was found to be highly redundant, with large stretches of identical sequences among chromosomes. To increase the utility of the assembly, the genome was separated into a mainly unique (primary) assembly for annotation and an alternate assembly of mostly redundant sequences. The R570 genome will serve as a resource for continued breeding improvement of sugarcane.</p>
+     <h4><strong>Genome Information</strong></h4>
+     <table>
+         <tr><td>Assembly Source:</td><td>JGI</td></tr>
+         <tr><td>Assembly Version:</td><td>v2.0</td></tr>
+         <tr><td>Annotation Source:</td><td>JGI</td></tr>
+         <tr><td>Annotation Version:</td><td>v2.1</td></tr>
+         <tr><td>Total Scaffold Length (bp):</td><td>5,046,770,891</td></tr>
+         <tr><td>Number of Scaffolds:</td><td>144</td></tr>
+         <tr><td>Min. Number of Scaffolds containing half of assembly (L50):</td><td>28</td></tr>
+         <tr><td>Shortest Scaffold from L50 set (N50):</td><td>79,221,035</td></tr>
+         <tr><td>Total Contig Length (bp):</td><td>5,042,101,904</td></tr>
+         <tr><td>Number of Contigs:</td><td>842</td></tr>
+         <tr><td>Min. Number of Contigs containing half of assembly (L50):</td><td>99</td></tr>
+         <tr><td>Shortest Contig from L50 set (N50):</td><td>15,340,496</td></tr>
+         <tr><td>Number of Protein-coding Transcripts:</td><td>299,731</td></tr>
+         <tr><td>Number of Protein-coding Genes:</td><td>194,593</td></tr>
+         <tr><td>Percentage of Eukaryote BUSCO Genes:</td><td>98.7</td></tr>
+         <tr><td>DB Xrefs:</td><td>99.8</td></tr>
+     </table>
+     <h4><strong>Sequencing, Assembly, and Annotation</strong></h4>
+     <p>Main assembly consisted of 66.55x of single haplotype CCS PACBIO coverage (17,192 bp average read size), and was assembled using HiFiAsm+HIC and the resulting sequence was polished using RACON. Initial ordering of the V2 primary genome assembly was performed using the R570 V1 build. Unique 2kb markers were extracted from the V1 build and aligned to the HiFi contigs using BLAT. Additionally, genetic map information (237 Linkage groups; ~1.8 million correlated markers; 80bp) and R570 single chromosome illumina libraries (n=81, assembled using HipMER, 500 bp non overlapping markers extracted from >1kb contigs) were projected onto the HiFi contigs to identify misjoins. A total of 558 misjoins were initially identified and broken. Additional misjoins were identified using the Bionano R570 optical map, using the 'cut' version of the genome. V1 build markers were re-aligned to 'cut' genome assembly and were used to define a primary path along each chromosome, selecting the minimum number of contigs required to complete the chromosome path. Secondary contigs were marked 'alternative' and removed into a separate bin. Sorghum bicolor (v3.1.1; n=34,211) primary protein sequences were then aligned to the primary assembly to order and orient contigs within chromosomes, and were used to trim sequence overlaps. S.bicolor protein sequences were then used to visualize gaps in the chromosome builds and find contigs that could potentially fill them. After these contigs were inserted into gaps, the overlap and trimming step was repeated. Lastly, to identify contigs which belong in the primary build (representing unique sequence) but had not been previously anchored, 48bp kmers were extracted from the primary chromosomes and were used to mask the remaining contigs. Any non-duplicative contigs were placed in the primary assembly. After fixing potential misjoins identified from HiC, homozygous SNPs and INDELs were corrected in the release sequence using 45x of Illumina reads (2x150, 400bp insert).</p>
+     <p>Transcript assemblies were made from ~3.7B pairs of 2X150 stranded paired-end Illumina RNA-seq reads using PERTRAN, which conducts genome-guided transcriptome short read assembly via GSNAP (Wu and Nacu, 2010) and builds splice alignment graphs after alignment validation, realignment and correction. To obtain ~1.5M putative full length transcripts, about 31M PacBio Iso-Seq CCSs were corrected and collapsed by genome guided correction pipeline, which aligns CCS reads to genome with GMAP (Wu and Nacu, 2010) with intron correction for small indels in splice junctions if any and clusters alignments when all introns are the same or 95% overlap for single exon. Subsequently 1,763,610 transcript assemblies were constructed using PASA (Haas, 2003) from RNA-seq transcript assemblies above. Loci were determined by transcript assembly alignments and/or EXONERATE alignments of proteins from arabi (Arabidopsis thaliana), soybean, rice, sorghum, brachy, Panicum hallii, Joinvillea ascendens, Acorus americanus, Paspalum vaginatum, Phoenix dactylifera, Musa acuminata, Ananas comosus, Asparagus officinalis, Phalaenopsis equestris, aquilegia, grape and Swiss-Prot proteomes to repeat-soft-masked Saccharum officinarum x spontaneum R570 genome using RepeatMasker (Smit, 2013-2015) with up to 2K BP extension on both ends unless extending into another locus on the same strand. Repeat library consists of De Novo repeats by RepeatModeler (Smit, 2008-2015) on Saccharum officinarum x spontaneum R570 genome and repeats in RepBase. Gene models were predicted by homology-based predictors, FGENESH+ (Salamov, 2000), FGENESH_EST (similar to FGENESH+, but using EST to compute splice site and intron input instead of protein/translated ORF), and EXONERATE (Slater and Birney, 2005), PASA assembly ORFs (in-house homology constrained ORF finder) and from AUGUSTUS (Stanke, 2006) trained by the high confidence PASA assembly ORFs and with intron hints from short read alignments. The best scored predictions for each locus are selected using multiple positive factors including EST and protein support, and one negative factor: overlap with repeats. The selected gene predictions were improved by PASA. Improvement includes adding UTRs, splicing correction, and adding alternative transcripts. PASA-improved gene model proteins were subject to protein homology analysis to above mentioned proteomes to obtain Cscore and protein coverage. Cscore is a protein BLASTP score ratio to MBH (mutual best hit) BLASTP score and protein coverage is highest percentage of protein aligned to the best of homologs. PASA-improved transcripts were selected based on Cscore, protein coverage, EST coverage, and their CDS overlapping with repeats. The transcripts were selected if their Cscore is larger than or equal to 0.5 and protein coverage larger than or equal to 0.5, or it has EST coverage, but their CDS overlapping with repeats is less than 20%. For gene models whose CDS overlaps with repeats for more than 20%, their Cscore must be at least 0.9 and homology coverage at least 70% to be selected. This is first round of gene annotation.</p>
+     <p>Each sub genome including all recombinant chromosomes as one sub genome is hardmasked with its respective gene models of high confidence (transcriptome fully supported, high homology supported and complete gene models). The masked genome was BLASTXed and EXONERATEed against non-self high confidence and non-redudant peptide proteomes from the first round to make EXONERATE gene predictions. The predicted gene models were scored with BLASTP using homology proteomes. These models were compared to ones from the first round and better homology supported ones (not contradicated by transcriptome evidence) were kept to improve gene models from first round or added if no first round gene model</p>
+     <p>The selected gene models were subject to Pfam analysis and gene models whose protein is more than 30% in Pfam TE domains were removed and weak gene models. Incomplete gene models, low homology supported without fully transcriptome supported gene models and short single exon (< 300 BP CDS) without protein domain nor good expression gene models were manually filtered out.</p>
+     <h4><strong>References</strong></h4>
+     <p><strong>1.</strong>&nbsp;&nbsp;Haas, B.J., Delcher, A.L., Mount, S.M., Wortman, J.R., Smith Jr, R.K.,Jr., Hannick, L.I., Maiti, R., Ronning, C.M., Rusch, D.B., Town, C.D. et al. (2003) Improving the Arabidopsis genome annotation using maximal transcript alignment assemblies. . Nucleic Acids Res., 31, 5654-5666. </p>
+     <p><strong>2.</strong>&nbsp;&nbsp;Slater, G.S., and Birney, E. (2005) Automated generation of heuristics for biological sequence comparison. BMC Bioinformatics 6:31</p>
+     <p><strong>3.</strong>&nbsp;&nbsp;Salamov, A. A. and Solovyev, V. V. (2000). Ab initio gene finding in Drosophila genomic DNA. Genome Res 10, 516-22.</p>
+     <p><strong>4.</strong>&nbsp;&nbsp;Smit, AFA, Hubley, R & Green, P. RepeatMasker Open-4.0. 2013-2015 http://www.repeatmasker.org</p>
+     <p><strong>5.</strong>&nbsp;&nbsp;Stanke, M., Schoffmann, O., Morgenstern, B. et al. Gene prediction in eukaryotes with a generalized hidden Markov model that uses hints from external sources. BMC Bioinformatics 7, 62 (2006). https://doi.org/10.1186/1471-2105-7-62.</p>
+     <h4><strong>Reference Publication(s)</strong></h4>
+     <p><a href="https://www.nature.com/articles/s41586-024-07231-4">Healey A L, Garsmeur O, Lovell J T, et al. The complex polyploid genome architecture of sugarcane[J]. Nature, 2024, 628(8009): 804-810.</a></p>
+</div>
+ </div>
+
+</div>

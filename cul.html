@@ -1,0 +1,864 @@
+
+
+
+<html>
+<style>
+    @media print
+    {
+        table {page-break-after:always;}
+    }
+</style>
+
+<head>
+    <title>TCOD breed search</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://ngdc.cncb.ac.cn:443/tcod/css/bootstrap.4.1.3.min.css" >
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://ngdc.cncb.ac.cn:443/tcod/css/main.css"/>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+
+
+<style type="text/css">
+    .navbar-dark .navbar-nav a.nav-link, a.dropdown-item {color: #ffffff; font-family: "Arial Rounded MT Bold"}
+    .navbar-dark .navbar-nav a.nav-link:hover, a.dropdown-item:hover {color:#99CC99;background:transparent;outline:0;}
+    .bg-dark, .dropdown-menu{background-color: #4f9932 !important;}
+    .navbar-nav .nav-item{padding-right: 10px;padding-left: 10px;}
+</style>
+
+
+<div class="container"  style="background: url('https://ngdc.cncb.ac.cn:443/tcod/img/portal/test2.png') ; margin-bottom: 20px;">
+    <div class="row no-gutters" style="height: 120px;">
+
+
+
+
+
+    </div>
+    <!--navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 30px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://ngdc.cncb.ac.cn:443/tcod/home">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Browse</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/species">Species</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/projects">Projects</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/samples">Samples</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/genomes">Genomes</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/genes">Genes</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/variations">Variations</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/expressions">Expressions</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/cultivars">Cultivars</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn:443/tcod/publications">Publications</a>
+
+                    </div>
+                </li>
+
+
+
+
+
+
+
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">BLAST</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn/blast/?db=tcod_nucleotide&program=blastn" target="_blank">blastn</a>
+                        <a class="dropdown-item" href="https://ngdc.cncb.ac.cn/blast/?db=tcod_protein&program=blastp" target="_blank">blastp</a>
+                    </div>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://ngdc.cncb.ac.cn:443/tcod/browser">Genome Browser</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://ngdc.cncb.ac.cn:443/tcod/download">Download</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://ngdc.cncb.ac.cn:443/tcod/help">Help</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <ol class="breadcrumb h6 " style="background-color: #d4edda; ">
+        <li class="breadcrumb-item"><a href="/tcod/">TCOD</a></li>
+        <li class="breadcrumb-item active">Cultivars</li>
+    </ol>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Cultivar Search</h3>
+        </div>
+            <div class="card-body">
+
+    <div id="chart1" style="height: 500px;background-color: #FAFAFA"></div>
+    <p></p>
+    <p></p>
+                    <form  method="get" id="searchForm">
+                    <button type="button" class="btn btn-primary btn-outline-primary" style="width: 300px;border-color: #5cb85c;color:#5cb85c;align-content: center;font-family: 'Times New Roman'" data-toggle="collapse" data-target="#search"><b>Click to modify search</b></button>
+                    <br>
+                    <div id="search" class="collapse show">
+
+                        <br>
+                        <br>
+                        <div class="row" style="font-size: large" >
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-family: 'Times New Roman" >Breed Number:</label>
+                                    <input style="width: 300px;height: 30px" name="accessionNumber" id='accession1' type="text" value="" placeholder="ex. mesb1"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-family: 'Times New Roman">Synonym:</label>
+                                    <input  style="width: 300px;height: 30px" name="synonyms" type="text" value="" placeholder="ex. BRA-005881 IBADAN"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="font-size: large" >
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-family: 'Times New Roman" >Acession Name:</label>
+                                    <input style="width: 300px;height: 30px" name="accessionName" type="text" value="" placeholder="ex. BRA152 TMe-1"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-family: 'Times New Roman">DOI:</label>
+                                    <input  style="width: 300px;height: 30px" name="doi" type="text" value="" placeholder="ex. 10.18730/P8EQY"/>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="font-size: large">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-family: 'Times New Roman">Country:</label>
+                                    <input  style="width: 300px;height: 30px" name="country" id='country1' type="text" value="" placeholder="ex. Brazil Nigeria"/>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-family: 'Times New Roman">Dry Matter Content:</label>
+                                    <input name="dryMatterContent1" style="width: 100px;height: 30px" type="text"
+                                           value="" placeholder="0";/> ~
+                                    <input name="dryMatterContent2" style="width: 100px;height: 30px" type="text"
+                                           value="" placeholder="100"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="font-size: large">
+
+
+
+
+
+
+
+
+
+                            <div class="col-md-6" style="font-family: 'Times New Roman">
+                                <div class="form-group">
+                                    <label>Source:</label>
+                                    <input type="radio" name="source" value="" checked="checked">ALL
+                                    <input type="radio" name="source" value="CIAT" >CIAT
+                                    <input type="radio" name="source" value="IITA" >IITA
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <h4></h4>
+
+                        <div class="row" >
+                            <button type="submit" class="btn btn-primary " style="font-weight: bold;margin-left: 900px;border-color: #b1dfbb;background-color: #5cb85c;color:#ffffff;" >&nbsp;Submit&nbsp;</button>
+                            <button type="reset" class="btn btn-primary " style="font-weight: bold;margin-left: 50px;border-color: #b1dfbb;background-color: #5cb85c;color:#ffffff;" >&nbsp;Reset&nbsp;</button>
+
+                        </div>
+                        <hr>
+                    </div>
+                </form>
+
+
+                <h3 style="margin-bottom: 10px;font-family: 'Times New Roman'"><br>Cultivar List<br></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-md-12">
+
+
+
+
+
+
+
+    <table id="breedstable" class="table table-hover table-bordered" style="font-size: 14px">
+                            <thead>
+                            <tr >
+
+
+
+                                 <th>ID</th>
+                                <th>Acession Name</th>
+                                <th>Synonym</th>
+                                <th>DOI</th>
+                                <th>Country</th>
+                                <th>Altitude</th>
+                                <th>Latitude</th>
+                                <th>longitude</th>
+                                <th>Dry Matter Content(%)</th>
+                                <th>Source</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+</div>
+
+<script src="https://ngdc.cncb.ac.cn:443/tcod/js/jquery-3.3.1.min.js" ></script>
+<script src="https://ngdc.cncb.ac.cn:443/tcod/js/popper.min.js" ></script>
+<script src="https://ngdc.cncb.ac.cn:443/tcod/js/bootstrap.4.1.3.min.js" ></script>
+
+
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://ngdc.cncb.ac.cn/cdn/js/headerfooter.js"> </script>
+<script src="https://ngdc.cncb.ac.cn:443/tcod/js/main.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f4f51620660eb8a8c9ae13b60d5c6937";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script src="js/echart.min.js"></script>
+
+<script src="js/world.js"></script>
+<script src="js/buttons.dataTables.min.js"></script>
+<script src="js/buttons.html5.min.js"></script>
+<script src="js/jszip.min.js"></script>
+<script src="js/dataTables.select.min.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+        getWorldMap('chart1');
+
+            var strHref = document.location.toString();
+            console.log(strHref)
+
+            let downloadurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/download-by-fields';
+
+            if (strHref.indexOf("?") == -1){
+                let tableurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/select-all-breed';
+                let myTable=$('#breedstable').DataTable({
+                    dom: 'Bfrtip',
+                    pageLength: 15,
+                    // language: dtLang,
+                    serverSide: true,
+                    lengthMenu: [15, 30, 50],
+                    processing: true,
+                    ordering : true,
+                    // order: [[ 1, 'asc' ]],
+                    paging : true,
+                    bFilter: true,
+                    // select: true,
+                    // pagingType : "full_numbers",
+                    searchable : true,
+                    searching: true,
+                    autoWidth : false,  // 自动宽度
+                    dom:
+                        "<'row'" +
+                        "<'col-md-12'B>" +
+                        ">" +
+                        "<'row'<'col-md-6'i><'col-md-6'f>r>" +
+                        "t" +
+                        "<'row'<'col-md-6'l><'col-md-6'p>>",
+                    ajax:{
+                        url:tableurl,
+                        dataType:"json",
+                        type:"GET",
+                        dataSrc:'data',
+                    },
+
+                    buttons: [
+                        {
+                            extend: 'excelHtml5',
+                            title: 'Cultivar_information',
+                            text:'Download this page data',
+                            className:'btn btn-outline-success',
+                            // className:'btn btn-success',
+
+                        },
+                        {
+                            extend: 'collection',
+                            title: 'Cultivar_information',
+                            text:'Download all data',
+                            className:'btn btn-outline-success',
+                            action: function () {
+                                window.location.href = downloadurl;
+                            }
+                            // className:'btn btn-success',
+
+
+                        },
+                    ],
+
+                    columns:[
+                        // {data:null},
+                        {data:'accessionNumber',
+                            render:function (data,type,row) {
+                                return'<a href="https://ngdc.cncb.ac.cn:443/tcod/breed/'+data+'" >'+data+'</a>';
+                            }
+                        },
+                        {data:'accessionName'},
+                        {data:'synonyms'},
+                        {data:'doi'},
+                        {data:'country'},
+                        {data:'altitude'},
+                        {data:'latitude'},
+                        {data:'longitude'},
+                        {data:'dryMatterContent'},
+                        {data:'source'},
+                    ],
+                    // columnDefs : [
+                    //     {//这个就是用来画第一列的小方块多选框的
+                    //         orderable : false,
+                    //         className : 'select-checkbox',
+                    //         targets : 0
+                    //     },{
+                    //         targets : 0,//代表第0行
+                    //         searchable : false,
+                    //         orderable : false,
+                    //         className : 'dt-body-center',
+                    //         render : function(data, type, row) {
+                    //             // return '<input class="checkchild" type="checkbox"/>';
+                    //             return "<div align='center'>" +
+                    //                 "<input type=\"checkbox\" name=\"ckb-jobid\" value=" + data + ">" + "</div>";
+                    //         }
+                    //     }],
+                    // select : {
+                    //     style : 'multi',
+                    //     selector : 'td:first-child'
+                    // },
+                });
+
+
+                // $('#select_All').click(function () {//全选
+                //     console.log(myTable.rows().select().data().toArray())
+                //     flag++;
+                //     console.log(flag)
+                //     if (flag % 2 == 0) {
+                //         myTable.rows().select().data().toArray();
+                //     } else {
+                //         myTable.rows().deselect();
+                //     }
+                //
+                // })
+
+                // $("#checkAll").on("click", function () {
+                //     if (this.checked) {
+                //         $(this).attr('checked', 'checked')
+                //         $("input[name='ckb-jobid']").each(function () {
+                //             this.checked = true;
+                //         });
+                //
+                //
+                //     } else {
+                //         $(this).removeAttr('checked')
+                //         $("input[name='ckb-jobid']").each(function () {
+                //             this.checked = false;
+                //
+                //         });
+                //     }
+                // });
+
+
+                // $(".buttons-excel").text('Download');
+
+                $("form").submit(function (e) {
+                    e.preventDefault();
+                    let params =$('#searchForm').serialize();
+                    let url = 'https://ngdc.cncb.ac.cn:443/tcod/rest/breed/select-breed-by-fields?'+params;
+                    myTable.ajax.url(url).load();
+                    downloadurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/download-by-fields?'+params;
+                });
+
+                // })
+
+                $('#breedstable_filter input').bind('keyup', function(){
+                   inputval=$('#breedstable_filter input').val();
+                   console.log(inputval);
+
+                    if (downloadurl.indexOf("?") == -1){
+                        downloadurl=downloadurl+"?search%5Bvalue%5D="+inputval;
+                        console.log(downloadurl);
+                    }else{
+                        downloadurl=changeURLArg(downloadurl,'search%5Bvalue%5D',inputval)
+
+                        console.log(downloadurl);
+                    }
+
+                });
+
+            }else{
+                let tableurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/select-all-breed';
+                let myTable=$('#breedstable').DataTable({
+                    dom: 'Bfrtip',
+                    pageLength: 15,
+                    // language: dtLang,
+                    serverSide: true,
+                    lengthMenu: [15, 30, 50],
+                    processing: true,
+                    ordering : true,
+                    // order: [[ 1, 'asc' ]],
+                    // ordering : false,
+                    paging : true,
+                    bFilter: true,
+                    // pagingType : "full_numbers",
+                    searchable : true,
+                    searching: true,
+                    autoWidth : false,  // 自动宽度
+                    dom:
+                        "<'row'" +
+                        "<'col-md-12'B>" +
+                        ">" +
+                        "<'row'<'col-md-6'i><'col-md-6'f>r>" +
+                        "t" +
+                        "<'row'<'col-md-6'l><'col-md-6'p>>",
+                    ajax:{
+                        url:tableurl,
+                        dataType:"json",
+                        type:"GET",
+                        dataSrc:'data',
+                    },
+
+                    buttons: [
+                        {
+                            extend: 'excelHtml5',
+                            title: 'Cultivar_information',
+                            text:'Download this page data',
+                            className:'btn btn-outline-success',
+                            // className:'btn btn-success',
+
+                        },
+                        {
+                            extend: 'collection',
+                            title: 'Cultivar_information',
+                            text:'Download all data',
+                            className:'btn btn-outline-success',
+                            action: function () {
+                                window.location.href = downloadurl;
+                            }
+                            // className:'btn btn-success',
+
+
+                        },
+                    ],
+
+
+                    columns:[
+                        {data:'accessionNumber',
+                            render:function (data,type,row) {
+                                return'<a href="https://ngdc.cncb.ac.cn:443/tcod/breed/'+data+'" >'+data+'</a>';
+                            }
+                        },
+                        {data:'accessionName'},
+                        {data:'synonyms'},
+                        {data:'doi'},
+                        {data:'country'},
+                        {data:'altitude'},
+                        {data:'latitude'},
+                        {data:'longitude'},
+                        {data:'dryMatterContent'},
+                        {data:'source'},
+                    ],
+
+                });
+
+                var praminfo = strHref.split('?')[1];
+                var pramvalue = new URLSearchParams('?'+praminfo);
+
+                countryvalue=pramvalue.get('country');
+                console.log(countryvalue)
+                accessionvalue=pramvalue.get('accessionNumber');
+
+                var beforecountry = document.getElementById("country1");
+                if(countryvalue !=null && countryvalue!='') {
+                    beforecountry.value=countryvalue
+                    let params =$('#searchForm').serialize();
+                    let url = 'https://ngdc.cncb.ac.cn:443/tcod/rest/breed/select-breed-by-fields?'+params;
+                    myTable.ajax.url(url).load();
+                    downloadurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/download-by-fields?'+params;
+                }
+
+                var beforeaccession = document.getElementById("accession1");
+                if(accessionvalue !=null && accessionvalue!='') {
+                    beforeaccession.value=accessionvalue
+                    let params =$('#searchForm').serialize();
+                    let url = 'https://ngdc.cncb.ac.cn:443/tcod/rest/breed/select-breed-by-fields?'+params;
+                    myTable.ajax.url(url).load();
+                    downloadurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/download-by-fields?'+params;
+                }
+
+                $("form").submit(function (e) {
+                    e.preventDefault();
+                    let params =$('#searchForm').serialize();
+                    let url = 'https://ngdc.cncb.ac.cn:443/tcod/rest/breed/select-breed-by-fields?'+params;
+                    myTable.ajax.url(url).load();
+                    downloadurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/download-by-fields?'+params;
+                });
+
+                $('#breedstable_filter input').bind('keyup', function(){
+                    inputval=$('#breedstable_filter input').val();
+                    console.log(inputval);
+
+                    if (downloadurl.indexOf("?") == -1){
+                        downloadurl=downloadurl+"?search%5Bvalue%5D="+inputval;
+                        console.log(downloadurl);
+                    }else{
+                        downloadurl=changeURLArg(downloadurl,'search%5Bvalue%5D',inputval)
+
+                        console.log(downloadurl);
+                    }
+
+                });
+
+            }
+
+            function getWorldMap(id) {
+
+
+
+
+                $("#"+id).html('<img src="img/ajax-loader.gif"/>');
+
+                var myChart = echarts.init(document.getElementById(id));
+
+                $.getJSON('https://ngdc.cncb.ac.cn:443/tcod/rest/breed/get-all-country', function (data) {
+                    let option = {
+                        title: {
+                            text: 'Distribution map of cassava varieties',
+                            textStyle:{
+                                fontFamily: 'Arial',
+                                fontSize: 20,
+                                fontStyle: 'normal',
+                                fontWeight: 'normal',
+                            },
+                            x: 'center',
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            backgroundColor: '#555',
+                            borderColor: '#3574c8',
+                            formatter: function (params) {
+                                let res;
+                                if (params.value > 0) {
+                                    res = params.data.name + ': ' + params.data.value;
+                                } else {
+                                    res = '';
+                                }
+                                return res;
+                            }
+                        },
+                        // toolbox: {
+                        //     show: true,
+                        //     feature: {
+                        //         mark: {show: true},
+                        //         // dataView: {show: true, readOnly: false},
+                        //         // restore: {show: true},
+                        //         // saveAsImage: {show: true}
+                        //     }
+                        // },
+                        visualMap: {
+                            left: "center",
+                            bottom: 20,
+                            orient: "horizontal",
+                            aspectScale: 0.75,
+                            type: 'piecewise',
+                            inverse: false,
+                            pieces: [
+                                {
+                                    gte: 1,
+                                    lt: 49,
+                                    label: "1-49",
+                                    color: '#B7D3F8'
+                                }, {
+                                    gte: 50,
+                                    lt: 99,
+                                    label: "50-99",
+                                    color: '#99C4F1'
+                                }, {
+                                    gte: 100,
+                                    lt: 499,
+                                    label: "100-499",
+                                    color: '#659ED5'
+                                }, {
+                                    gte: 500,
+                                    // lt: 99999,
+                                    label: ">500",
+                                    color: '#4074AD'
+                                },
+                                // {
+                                //     gte: 100000,
+                                //     label: ">100000",
+                                //     color: '#11457E'
+                                // }
+                            ],
+                            itemWidth: 15,
+                            itemHeight: 15,
+                            showLabel: true,
+                            seriesIndex: [0],
+                            textStyle: {
+                                color: '#555'
+                            },
+                        },
+                        series: [{
+                            top:50,
+                            bottom:50,
+                            type: 'map',
+                            map: 'world',
+                            roam: false,
+                            data: data,
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        show: false,
+                                    },
+                                    areaColor: '#fff',
+                                    borderWidth: 1,
+                                    borderColor: '#c4c4c4',
+                                },
+                                emphasis: {
+                                    areaColor: 'rgb(147,218,85)',
+                                    label: {
+                                        show: false,
+                                    },
+
+                                },
+                            },
+                        }]
+                    };
+                    myChart = echarts.init(document.getElementById('chart1'))
+                    myChart.setOption(option, true);
+                });
+
+                function mapConsole(param) {
+
+                    // alert(param.name);
+                    // alert(param.name);
+                    var currentcountry=param.name;
+                    let tableurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/select-breed-by-fields?country='+currentcountry;
+                    downloadurl='https://ngdc.cncb.ac.cn:443/tcod/rest/breed/download-by-fields?country='+currentcountry
+                    $('#breedstable').DataTable().ajax.url(tableurl).load();
+                }
+
+                myChart.on("click", mapConsole);
+            }
+
+            function changeURLArg(url,arg,arg_val){
+                var pattern=arg+'=([^&]*)';
+                var replaceText=arg+'='+arg_val;
+                if(url.match(pattern)){
+                    var tmp='/('+ arg+'=)([^&]*)/gi';
+                    tmp=url.replace(eval(tmp),replaceText);
+                    return tmp;
+                }else{
+                    if(url.match('[\?]')){
+                        return url+'&'+replaceText;
+                    }else{
+                        return url+'?'+replaceText;
+                    }
+                }
+                return url+'\n'+arg+'\n'+arg_val;
+            }
+
+
+
+
+        });
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

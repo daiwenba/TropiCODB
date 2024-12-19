@@ -1,0 +1,171 @@
+.stat-all {
+    width: 1100px;
+    height: 1100px;
+    padding-bottom: 25px;
+    font-family: Roboto Slab;
+}
+.species-body {
+    width: 300px;
+    height: 500px;
+    float: left;
+}
+.stat-body {
+    margin-top: 28px;
+    width: 800px;
+    height: 100%;
+    float: left;
+}
+.species-bar {
+    width: 250px;
+    height: 400px;
+    background-color: #f7fff6;
+    margin: 25px 25px 0px 25px;
+    border: 1px solid #007849;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius:15px;
+}
+#species-bar {
+    width: 200px;
+    height: 40px;
+    background-color: #007849;
+    margin: 25px 75px 0px 25px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    padding-top: 12px;
+}
+.pic-heading {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.latin-common {
+    color: #59595a;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    font-size: 18px;
+}
+#species-bar p{
+    font-size: 22px;
+    color: white;
+}
+#genome-stat-bar {
+    width: 250px;
+    height: 40px;
+    background-color: #007849;
+    margin: 25px 75px 25px 25px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px #000;
+    text-align: center;
+    padding-top: 12px;
+}
+#genome-stat-bar p{
+    font-size: 22px;
+    color: white;
+}
+.genome-stat {
+    width: 750px;
+    background-color: #f7fff6;
+    margin: 0px 25px 0px 25px;
+    border: 1px solid #007849;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 5px;
+    padding: 25px 15px 25px 15px;
+}
+.media-object {
+    width: 190px;
+    height: 190px;
+    border: 2px solid #007849;
+}
+.media-body {
+    padding-top: 10px;
+}
+.media {
+    width: 700px;
+    height: 250px;
+    margin: 0px 25px 0px 25px;
+    padding-top: 10px;
+    padding-right: 40px;
+}
+.media-heading {
+    font-size: 20px;
+    padding: 15px 0px 15px 10px;
+}
+.btn-group {
+}
+.btn-group button {
+    font-size: 14px;
+    border-color: #007949;
+    text-align: center;
+}
+.para {
+    width: 700px;
+    margin-left: 30px;
+    padding-right: 30px;
+}
+.para h3 {
+    color: #59595a;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    font-size: 18px;
+}
+.intro {
+    line-height: 28px;
+    text-indent: 2em;
+}
+.detail-stat {
+    text-indent:2em;
+    line-height: 34px;
+}
+.source {
+    line-height: 24px;
+    margin-bottom: 25px;
+    text-indent: 2em;
+}
+.para p sup {
+    font-size: 6px;
+}
+#cca {
+    display: block;
+}
+#cil {
+    display: none;
+}
+#juca{
+    display: none;
+}
+#juhi {
+    display: none;
+}
+#juni {
+    display: none;
+}
+#jure {
+    display: none;
+}
+#jusi {
+    display: none;
+}
+#jumi {
+    display: none;
+}
+#ptst {
+    display: none;
+}
+#var-pool {
+    display: none;
+}
+.content-source {
+    margin-top:10px;
+    color: #59595a;
+    font-size:14px;
+    text-align: center;
+}
+
+

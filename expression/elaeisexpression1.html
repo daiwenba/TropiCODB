@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropDB</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/gene_search.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="icon" href="../static/images/icon.png">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+            white-space: nowrap; /* 不允许换行 */
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        #loader {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #555;
+        }
+        #customSearchBox {
+            width: 77.6%; /* Make search box wider */
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        #customSearchBox1 {
+            width: 77.6%; /* Make search box wider */
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        #customSearchBox2 {
+            width: 77.6%; /* Make search box wider */
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        #searchButton, #downloadButton {
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        #searchButton1, #downloadButton1 {
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        #searchButton2, #downloadButton2 {
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .id-list {
+            margin-top: 20px;
+        }
+        .id-item {
+            margin: 5px;
+            padding: 5px;
+            background-color: #f0f0f0;
+            display: inline-block;
+            border-radius: 5px;
+            position: relative;
+        }
+        .id-item button {
+            position: absolute;
+            right: -10px;  /* 向右移动按钮 */
+            top: -5px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!-- Navigation Bar -->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="../index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="../species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="../species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="../species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="../species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="../species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="../species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="../species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="../species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="../species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="../species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="../species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="../species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="../species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="../species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="../species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="../species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="../species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="../species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="../blast.html" >BLAST</a> </li>
+                <li><a href="../jbrowse.html">JBrowse</a></li>
+                <li><a href="../gene_search.html">Gene Search</a></li>
+                <li><a href="../gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="../miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="../expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/sugercane.html">Various organs</a></li>
+                        <li><a href="../expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="../expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="../expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="../expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="../expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="../expression/rubber.html">Various organs</a> </li>
+                        <li><a href="../expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="../expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="../expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="../efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="../efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="../variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="../variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="../metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="../metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="../metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="../phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="../phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="../download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="../keygene/starch.html">Starch gene</a></li>
+                        <li><a href="../keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="../keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="../guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="../helpyou.html">FAQ</a> </li>
+                <li><a href="../helpus.html">Contact us</a></li>
+                <li><a href="../conference.html">Conferences</a></li>
+                <li><a href="../links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div id="group1" class="in_group m">
+    <div class="group-hd">
+        <h2>Oil palm expression</h2>
+        <p>Reference:&nbsp;&nbsp;<a href="../species/oil_plam.html">oil_palm_African</a>&nbsp;&nbsp;&nbsp; sample:&nbsp;&nbsp;<a href="https://www.ncbi.nlm.nih.gov/sra/?term=PRJDB12637">PRJDB12637 </a>&nbsp;&nbsp;&nbsp;Computational method:FPKM</p>
+
+    </div>
+    <div class="widget-content">
+        <input type="text" id="customSearchBox1" placeholder="Please enter an ID. Separate multiple IDs with commas.">
+        <button id="searchButton1">search</button>
+        <button id="downloadButton1" style="width: 102px">download</button>
+        <table id="table8" class="display" style="font-size:14px;">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>SAMD00428824</th>
+                <th>SAMD00428826</th>
+                <th>SAMD00428828</th>
+                <th>SAMD00428830</th>
+                <th>SAMD00428832</th>
+                <th>SAMD00428834</th>
+                <th>SAMD00428836</th>
+                <th>SAMD00428838</th>
+                <th>SAMD00428840</th>
+                <th>SAMD00428842</th>
+                <th>SAMD00428844</th>
+                <th>SAMD00428846</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<!-- Initialize DataTables with AJAX -->
+<script>
+    $(document).ready(function() {
+        var table = $('#table8').DataTable({
+            "ajax": {
+                "url": "elaeisexpression1.php",
+                "type": "POST"
+            },
+            "columns": [
+                { "data": "ID" },
+                { "data": "SAMD00428824" },
+                { "data": "SAMD00428826" },
+                { "data": "SAMD00428828" },
+                { "data": "SAMD00428830" },
+                { "data": "SAMD00428832" },
+                { "data": "SAMD00428834" },
+                { "data": "SAMD00428836" },
+                { "data": "SAMD00428838" },
+                { "data": "SAMD00428840" },
+                { "data": "SAMD00428842" },
+                { "data": "SAMD00428844" },
+                { "data": "SAMD00428846" },
+            ],
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "pageLength": 10,
+            "scrollX": true,
+            "fixedColumns": true,
+            "searching": false,
+            "drawCallback": function(settings) {
+                var max = -Infinity;
+                var min = Infinity;
+                var tableBody = this.api().table().body();
+
+                $(tableBody).find('td').each(function() {
+                    var value = parseFloat($(this).text());
+                    if (!isNaN(value)) {
+                        if (value > max) max = value;
+                        if (value < min) min = value;
+                    }
+                });
+
+                $(tableBody).find('td').each(function() {
+                    var value = parseFloat($(this).text());
+                    if (!isNaN(value)) {
+                        var intensity = (value - min) / (max - min);
+                        var colorValue = Math.floor(255 - intensity * 255);
+                        $(this).css('background-color', 'rgb(255,' + colorValue + ',' + colorValue + ')');
+                    }
+                });
+
+                // Update pagination info
+                var info = this.api().page.info();
+                $('#loader').hide(); // Ensure loader is hidden after table draw
+            }
+        });
+
+        // Custom search functionality, supports multiple IDs
+        $('#searchButton').on('click', function() {
+            var searchTerm = $('#customSearchBox').val().trim().toLowerCase();
+            $('#loader').show(); // Show loading animation
+
+            if (searchTerm === '') {
+                // Reset table
+                table.ajax.reload(); // Reload data
+            } else {
+                // Split IDs and filter DataTable data
+                var ids = searchTerm.split(',').map(id => id.trim().toLowerCase());
+                table.rows().every(function() {
+                    var rowData = this.data();
+                    var rowId = rowData.ID.toLowerCase();
+                    var showRow = ids.includes(rowId);
+                    $(this.node()).toggle(showRow);
+                });
+                table.draw(); // Update table display
+            }
+
+            $('#loader').hide(); // Hide loading animation
+        });
+
+        // Download current displayed data as CSV
+        $('#downloadButton').on('click', function() {
+            var csv = [];
+            var rows = table.rows({ filter: 'applied' }).data();
+            for (var i = 0; i < rows.length; i++) {
+                csv.push(rows[i].id + ',' + rows[i].bud_2cm + ',' + rows[i].bud_5cm + ',' +
+                    rows[i].Flowers + ',' + rows[i].Hypocotyls + ',' + rows[i].Leaves + ',' +
+                    rows[i].roots + ',' + rows[i].StemBark + ',' + rows[i].StemStick);
+            }
+            var csvContent = "data:text/csv;charset=utf-8," + csv.join("\n");
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "kenaf_expression_data.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    });
+</script>
+<div id="group2" class="in_group m">
+    <input type="text" id="searchID" placeholder="Enter ID" style="margin-top: 10px;margin-left: 10px;width: 83%;height: 50px" onkeydown="checkEnter(event)">
+    <button onclick="addID()" style="height: 50px">Add ID</button>
+    <button onclick="generateHeatmap()" style="height: 50px">Generate</button>
+    <!-- 显示已添加的 ID -->
+    <div class="id-list" id="idList"></div>
+    <!-- 点击搜索按钮后生成热图 -->
+    <!-- 热图展示区域 -->
+    <div id="heatmap" style="height: 600px;"></div>
+    <script>
+        // 用于存储已添加的ID
+        let selectedIDs = [];
+        // ECharts 初始化
+        let myChart = echarts.init(document.getElementById('heatmap'));
+        function checkEnter(event) {
+            // 按回车键时，自动添加ID
+            if (event.key === 'Enter') {
+                addID();
+            }
+        }
+        function addID() {
+            const searchID = document.getElementById('searchID').value.trim();
+            if (!searchID) {
+                alert('Please enter a valid ID');
+                return;
+            }
+            // 如果该 ID 已经添加过，提示用户
+            if (selectedIDs.includes(searchID)) {
+                alert('This ID has already been added');
+                return;
+            }
+            // 添加 ID 到已选择的 ID 列表
+            selectedIDs.push(searchID);
+            // 显示已添加的 ID
+            const idListDiv = document.getElementById('idList');
+            const idItem = document.createElement('div');
+            idItem.classList.add('id-item');
+            idItem.innerText = searchID;
+            // 创建删除按钮
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = '×';
+            // 删除按钮事件处理
+            deleteButton.addEventListener('click', function() {
+                deleteID(searchID, idItem);
+            });
+            idItem.appendChild(deleteButton);
+            idListDiv.appendChild(idItem);
+            // 清空输入框
+            document.getElementById('searchID').value = '';
+        }
+        function deleteID(id, idElement) {
+            // 从 selectedIDs 中删除
+            selectedIDs = selectedIDs.filter(selectedID => selectedID !== id);
+            // 移除页面上对应的 ID 元素
+            idElement.parentElement.removeChild(idElement);
+        }
+        function generateHeatmap() {
+            if (selectedIDs.length === 0) {
+                alert('请先添加 ID');
+                return;
+            }
+            // 通过 AJAX 请求获取热图数据
+            fetch('elaeismapper1.php?ids=' + selectedIDs.join(','))
+                .then(response => response.json())
+                .then(data => {
+                    // 配置热图选项
+                    let option = {
+                        tooltip: {
+                            position: 'top'
+                        },
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                saveAsImage: {}  // ECharts 自带的图片下载功能
+                            }
+                        },
+                        grid: {
+                            height: '60%',
+                            width: '80%',
+                            top: '2%',
+                            left: '15%',  // 将热图区域向右移动，以显示纵坐标
+                            bottom: '50%'  // 调整底部刻度尺位置，避免遮挡横坐标
+                        },
+                        xAxis: {
+                            type: 'category',
+                            data: data.columns,  // 横坐标
+                            axisLabel: {
+                                rotate: 45,  // 横坐标标签斜着显示
+                                fontSize: 12,
+                                margin: 10  // 增加横坐标与刻度尺的距离
+                            }
+                        },
+                        yAxis: {
+                            type: 'category',
+                            data: data.rows,  // 纵坐标
+                            axisLabel: {
+                                fontSize: 12,  // 纵坐标字体大小
+                                margin: 10  // 纵坐标与热图的距离
+                            }
+                        },
+                        visualMap: {
+                            min: 0,
+                            max: 100,
+                            calculable: true,
+                            orient: 'horizontal',
+                            left: 'center',
+                            bottom: '15%'
+                        },
+                        series: [{
+                            name: 'Expression',
+                            type: 'heatmap',
+                            data: data.values,  // 热图数据
+                            label: {
+                                show: false  // 去掉热图中的数字
+                            },
+                            emphasis: {
+                                itemStyle: {
+                                    borderWidth: 1,
+                                    borderColor: '#333'
+                                }
+                            }
+                        }]
+                    };
+                    // 更新图表
+                    myChart.setOption(option);
+                })
+                .catch(error => {
+                    alert('获取数据失败，请重试！');
+                    console.error(error);
+                });
+        }
+    </script>
+</div>
+</body>
+</html>

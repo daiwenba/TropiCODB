@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropDB</title>
+    <!--Bootstrap core css-->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/gene_search.css">
+    <link rel="icon" href="static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/chart.js"></script>
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/chart.esm.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="h">
+    <h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+    <ul class="shell">
+        <li class="botton">
+            <span ><a href="index.html">Home</a> </span>
+        </li>
+        <!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+        <li class="botton">
+            <span>Genome<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+                        <li><a href="./species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kapok</a>
+                    <ul class="submenu">
+                        <li><a href="species/Kapok.html"><i>Bombax ceiba</i></a></li>
+                        <li><a href="species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./blast.html" >BLAST</a> </li>
+                <li><a href="./jbrowse.html">JBrowse</a></li>
+                <li><a href="./gene_search.html">Gene Search</a></li>
+                <li><a href="./gene_family_search.php">Gene Family Search</a> </li>
+                <li><a href="./miRNA.php">miRNA Search</a></li>
+                <li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Transcriptome<span class="caret"></span> </span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="expression/cassavaexpression.html">Various organs</a> </li>
+                        <li><a href="expression/cassavaexpression1.html">Xanthomonas </a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugercane</a>
+                    <ul class="submenu">
+                        <li><a href="expression/sugercane.html">Various organs</a></li>
+                        <li><a href="expression/sugercane1.html">Drought stress</a></li>
+                        <li><a href="expression/sugercane2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="expression/elaeisexpression.html">Rought and salinity</a> </li>
+                        <li><a href="expression/elaeisexpression1.html">Salt stress</a> </li>
+                        <li><a href="expression/elaeisexpression2.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Kenaf</a>
+                    <ul class="submenu">
+                        <li><a href="expression/kenaf.html">Various organs</a> </li>
+                        <li><a href="expression/kenaf2.html">Salt stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" >Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="expression/rubber.html">Various organs</a> </li>
+                        <li><a href="expression/rubber1.html">Laticifer replicate</a> </li>
+                        <li><a href="expression/rubber2.html">Drying process</a> </li>
+                        <li><a href="expression/rubber3.html">Cold stress</a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">eFP-gene</a>
+                    <ul class="submenu">
+                        <li><a href="efp/cassava_efp.html">Cassava</a> </li>
+                        <li><a href="efp/sugarcane_efp.html">Sugarcane</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Variome<span class="caret"></span> </span>
+            <ul>
+                <li><a href="variome/573cassava.indel.html">Cassava</a> </li>
+                <li><a href="variome/98oilplamindel.html">Oil palm</a> </li>
+                <li><a href="./variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Metabolome<span class="caret"></span> </span>
+            <ul>
+
+                <li><a href="metabolite/cassava.html">Cassava</a> </li>
+                <li><a href="metabolite/sugarcane.html">Sugarcane</a> </li>
+                <li><a href="./metabolite/oilpalm.html">Oil palm</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Phenomics<span class="caret"></span> </span>
+            <ul>
+                <li><a href="./phenomics/cassava.html">Cassava</a> </li>
+                <li><a href="./phenomics/sugarcane.html">Sugarcane</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span><a href="./download.html">Downloads</a></span>
+        </li>
+        <li class="botton">
+            <span>Breeding<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Key genes</a>
+                    <ul class="submenu">
+                        <li><a href="keygene/starch.html">Starch gene</a></li>
+                        <li><a href="keygene/suger.html">Sugar gene</a> </li>
+                        <li><a href="keygene/oil.html">Oil gene</a> </li>
+                    </ul>
+                </li>
+                <li><a href="guideRNA.html">GuideRNA</a> </li>
+            </ul>
+        </li>
+        <li class="botton">
+            <span>Help<span class="caret"></span></span>
+            <ul>
+                <li><a href="./helpyou.html">FAQ</a> </li>
+                <li><a href="./helpus.html">Contact us</a></li>
+                <li><a href="conference.html">Conferences</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+    </header>
+<div id="group" class="in_group m">
+    <div class="group-hd">
+        <h2>Download genome file</h2>
+    </div>
+    <div class="downbox" style=" margin:auto">
+        <table id="table7" class="tabsty table table-striped" style="margin-bottom:40px;font-size:17px;">
+            <tbody>
+            <tr style="font-weight: bold; text-align: center; background-color: rgb(234,234,234)">
+                <td style="width: 25%">Species</td>
+                <td style="width: 25%">File</td>
+                <td style="width: 25%">File Size</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Manihot esculenta v6</i></td>
+                <td>
+                    <a href="./download/CASSAVAV6/Mesculenta_305_v6.fa">DNA</a>
+                    <a href="./download/CASSAVAV6/Mesculenta_305_v6.1.gene.gff3">GFF</a>
+                    <a href="./download/CASSAVAV6/Mesculenta_305_v6.1.protein.fa">Protein</a>
+                    <a href="download/CASSAVAV6/Mesculenta_305_v6.1.cds.fa">CDS</a>
+                </td>
+                <td>690MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Manihot esculenta v7</i></td>
+                <td>
+                    <a href="./download/CASSAVAV7/Mesculenta_520_v7.fa">DNA</a>
+                    <a href="./download/CASSAVAV7/Mesculenta_520_v7.1.gene.gff3">GFF</a>
+                    <a href="./download/CASSAVAV7/Mesculenta_520_v7.1.protein.fa">Protein</a>
+                    <a HREF="download/CASSAVAV7/Mesculenta_520_v7.1.cds.fa">CDS</a>
+                </td>
+                <td>874MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Manihot esculenta v8</i></td>
+                <td>
+                    <a href="./download/Cassava_v8/Mesculenta_671_v8.0.fa/Mesculenta_671_v8.0.fa">DNA</a>
+                    <a href="./download/Cassava_v8/Mesculenta_671_v8.1.gene.gff3/Mesculenta_671_v8.1.gene.gff3">GFF</a>
+                    <a href="./download/Cassava_v8/Mesculenta_671_v8.1.protein.fa/Mesculenta_671_v8.1.protein.fa">Protein</a>
+                    <a href="./download/Cassava_v8/Mesculenta_671_v8.1.cds.fa/Mesculenta_671_v8.1.cds.fa">CDS</a>
+                </td>
+                <td>825MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Manihot esculenta T2T</i></td>
+                <td>
+                    <a href="./download/Cassava%20T2T%20xx048/Dioscorea_esculenta.gene.fa">DNA</a>
+                    <a href="./download/Cassava%20T2T%20xx048/Dioscorea_esculenta.gene.gff">GFF</a>
+                    <a href="./download/Cassava%20T2T%20xx048/Dioscorea_esculenta.gene.pep.fa">Protein</a>
+                    <a href="download/Cassava%20T2T%20xx048/Dioscorea_esculenta.gene.cds.fa">CDS</a>
+                </td>
+                <td>512MB</td>
+            </tr>
+            <tr style="text-align: center">
+                <td><i>Saccharum spontaneum</i></td>
+                <td>
+                    <a href="./download/Saccharum%20spontaneum_AP85-441/Sspon.v20190103.gene.fasta/Sspon.v20190103.gene.fasta">DNA</a>
+                    <a href="./download/Saccharum%20spontaneum_AP85-441/Sspon.v20190103.gff3/Sspon.v20190103.gff3">GFF</a>
+                    <a href="./download/Saccharum%20spontaneum_AP85-441/Sspon.v20190103.protein.fasta/Sspon.v20190103.protein.fasta">Protein</a>
+                    <a HREF="download/Saccharum%20spontaneum_AP85-441/Sspon.v20190103.cds.fasta/Sspon.v20190103.cds.fasta">CDS</a>
+                </td>
+                <td>560MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Saccharum officinarum</i></td>
+                <td>
+                    <a href="./download/Saccharum%20officinarum_LApurple/GWHBEII00000000.genome.fasta/GWHBEII00000000.genome.fasta">DNA</a>
+                    <a href="./download/Saccharum%20officinarum_LApurple/GWHBEII00000000.gff/GWHBEII00000000.gff">GFF</a>
+                    <a href="./download/Saccharum%20officinarum_LApurple/GWHBEII00000000.Protein.faa/GWHBEII00000000.Protein.faa">Protein</a>
+                    <a href="download/Saccharum%20officinarum_LApurple/GWHBEII00000000.CDS.fasta/GWHBEII00000000.CDS.fasta">CDS</a>
+                </td>
+                <td>4.45GB</td>
+            </tr>
+            <tr style="text-align: center">
+                <td><i>Saccharum hybrid cultivar R570</i></td>
+                <td>
+                    <a href="./download/Saccharum_hybrid_cultivar_R570.gene.fna">DNA</a>
+                    <a href="./download/Saccharum_hybrid_cultivar_R570.gff3">GFF</a>
+                    <a href="./download/Saccharum_hybrid_cultivar_R570.protein.faa">Protein</a>
+                    <a href="download/Saccharum_hybrid_cultivar_R570.cds.fna">CDS</a>
+                </td>
+                <td>15GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Saccharum spontaneum NpX</i></td>
+                <td>
+                    <a href="./download/Saccharum_spontaneum_NpX/Saccharum_spontaneum_NpX.gene.fna">DNA</a>
+                    <a href="./download/Saccharum_spontaneum_NpX/Saccharum_spontaneum_NpX.gff3">GFF</a>
+                    <a href="./download/Saccharum_spontaneum_NpX/Saccharum_spontaneum_NpX.protein.faa">Protein</a>
+                    <a href="download/Saccharum_spontaneum_NpX/Saccharum_spontaneum_NpX.cds.fna">CDS</a>
+                </td>
+                <td>849MB</td>
+            </tr>
+            <tr style="text-align: center">
+                <td><i>Elaeis guineensis EG5</i></td>
+                <td>
+                    <a href="./download/Elaeis%20guineensis_African/GCF_000442705.1_EG5_genomic.fna">DNA</a>
+                    <a href="./download/Elaeis%20guineensis_African/GCF_000442705.1_EG5_genomic.gff">GFF</a>
+                    <a href="./download/Elaeis%20guineensis_African/GCF_000442705.1_EG5_protein.xlsx">Protein</a>
+                    <a href="download/Elaeis%20guineensis_African/GCF_000442705.1_EG5_cds_from_genomic.fna">CDS</a>
+                </td>
+                <td>1.74GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Elaeis guineensis EG11</i></td>
+                <td>
+                    <a href="./download/GCA_000442705.2_EG11_genomic.fna">DNA</a>
+                </td>
+                <td>1.73GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Elaeis guineensis EGPMv6</i></td>
+                <td>
+                    <a href="./download/GCA_015461965.1_EGPMv6_genomic.fna">DNA</a>
+                </td>
+                <td>1.13GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Elaeis guineensis EGV3</i></td>
+                <td>
+                    <a href="./download/GWHBKAS00000000.genome.fasta">DNA</a>
+                </td>
+                <td>1.59GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Olea europaea v1.0</i></td>
+                <td>
+                    <a href="./download/Olea%20europaea%20v1/GCF_002742605.1_O_europaea_v1_genomic.fna">DNA</a>
+                    <a href="./download/Olea%20europaea%20v1/GCF_002742605.1_O_europaea_v1_genomic.gff">GFF</a>
+                    <a href="./download/Olea%20europaea%20v1/GCF_002742605.1_O_europaea_v1_protein+.faa">Protein</a>
+                    <a href="download/Olea%20europaea%20v1/GCF_002742605.1_O_europaea_v1_cds_from_genomic.fna">CDS</a>
+                </td>
+                <td>1.42GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Olea europaea A9</i></td>
+                <td>
+                    <a href="./download/OLEAA9/GCA_902713445.1/GCA_902713445.1_OLEA9_genomic.fna">DNA</a>
+                    <a href="./download/OLEAA9/GCA_902713445.1/genomic.gff">GFF</a>
+                    <a href="./download/OLEAA9/GCA_902713445.1/protein.faa">Protein</a>
+                </td>
+                <td>2.08GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hibiscus cannabinus</i></td>
+                <td>
+                    <a href="./download/Hibiscus_cannabinus_genome.fasta">DNA</a>
+                    <a href="./download/Hibiscus_cannabinus.gff">GFF</a>
+                    <a href="./download/Hibiscus_cannabinus_pep.faa">Protein</a>
+                    <a href="download/Hibiscus_cannabinus_cds.fasta">CDS</a>
+                </td>
+                <td>1.27GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Bombax ceiba</i></td>
+                <td>
+                    <a href="./download/Bc/Bcei.fa">DNA</a>
+                    <a href="./download/Bc/Bcei.gff3">GFF</a>
+                    <a href="./download/Bc/Bcei.pep">Protein</a>
+                    <a HREF="download/Bc/Bcei.cds">CDS</a>
+                </td>
+                <td>858MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hevea brasiliensis GT1</i></td>
+                <td>
+                    <a href="./download/Hevea%20brasiliensis_tree_GT1/GCA_010458925.1_ASM1045892v1_genomic.fna">DNA</a>
+                    <a href="./download/Hevea%20brasiliensis_tree_GT1/GCA_010458925.1_ASM1045892v1_genomic.gff">GFF</a>
+                    <a href="./download/Hevea%20brasiliensis_tree_GT1/GCA_010458925.1_ASM1045892v1_protein.faa">Protein</a>
+                    <a HREF="download/Hevea%20brasiliensis_tree_GT1/GCA_010458925.1_ASM1045892v1_cds_from_genomic.fna">CDS</a>
+                </td>
+                <td>1.6GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hevea brasiliensis tree reyan8-79</i></td>
+                <td>
+                    <a href="./download/Hevea%20brasiliensis_tree_reyan8-79/reyan8-79.gene.fa">DNA</a>
+                    <a href="./download/Hevea%20brasiliensis_tree_reyan8-79/reyan8-79.gff">GFF</a>
+                    <a href="./download/Hevea%20brasiliensis_tree_reyan8-79/reyan8-79.protein.fa">Protein</a>
+                    <a href="download/Hevea%20brasiliensis_tree_reyan8-79/reyan8-79.cds.fa">CDS</a>
+                </td>
+                <td>382.1MB</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="group3" class="in_group m">
+    <div class="group-hd">
+        <h2>Download expression file</h2>
+    </div>
+    <div class="downbox" style=" margin:auto">
+        <table id="table10" class="tabsty table table-striped" style="margin-bottom:40px;font-size:17px;">
+            <tbody>
+            <tr style="font-weight: bold; text-align: center; background-color: rgb(234,234,234)">
+                <td style="width: 25%">Species</td>
+                <td style="width: 25%">Handling method</td>
+                <td style="width: 25%">Computing method</td>
+                <td style="width: 25%">File Size</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Manihot esculenta</i></td>
+                <td><a href="download/cassavaexpression.txt">Varous organs</a> </td>
+                <td>FPKM</td>
+                <td>7.23MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Manihot esculenta</i></td>
+                <td><a href="download/cassavaexpression1.txt">Xanthomonas</a> </td>
+                <td>FPKM</td>
+                <td>3.09MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Saccharum officinarum</i></td>
+                <td><a href="download/sugarcane_expression.txt">Varous organs</a> </td>
+                <td>TMM</td>
+                <td>6.23MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Saccharum officinarum</i></td>
+                <td><a href="download/sugarcane1_expression.txt">Drought stress</a></td>
+                <td>TMM</td>
+                <td>7.68MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Saccharum officinarum</i></td>
+                <td><a href="download/sugarcane2_expression.txt">Cold stress</a></td>
+                <td>TMM</td>
+                <td>6.18MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Saccharum officinarum</i></td>
+                <td><a href="download/sugarcane2_expression.txt">Cold stress</a></td>
+                <td>TMM</td>
+                <td>6.18MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Elaeis guineensis</i></td>
+                <td><a href="download/Elaeis_guneensis_expression.txt">Rought and salinity</a></td>
+                <td>TMM</td>
+                <td>7.25MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Elaeis guineensis</i></td>
+                <td><a href="download/Elaeis_guneensis1_expression.txt">Salt stress</a></td>
+                <td>TMM</td>
+                <td>2.60MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Elaeis guineensis</i></td>
+                <td><a href="download/Elaeis_guneensis2_expression.txt">Cold stress</a></td>
+                <td>TMM</td>
+                <td>2.46MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hibiscus cannabinus</i></td>
+                <td><a href="download/Elaeis_guneensis2_expression.txt">Various organs</a></td>
+                <td>TMM</td>
+                <td>2MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hibiscus cannabinus</i></td>
+                <td><a href="download/kenaf2_expression.txt">Salt stress</a></td>
+                <td>FPKM</td>
+                <td>4.19MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hevea brasiliensis</i></td>
+                <td><a href="download/rubber_expression.txt">Various organs</a></td>
+                <td>TMM</td>
+                <td>4.13MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hevea brasiliensis</i></td>
+                <td><a href="download/rubber_expression1.txt">Laticifer replicate</a></td>
+                <td>FPKM</td>
+                <td>1.82MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hevea brasiliensis</i></td>
+                <td><a href="download/rubber_expression2.txt">Drying process</a></td>
+                <td>FPKM</td>
+                <td>5.07MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td><i>Hevea brasiliensis</i></td>
+                <td><a href="download/rubber_expression3.txt">Cold stree</a></td>
+                <td>FPKM</td>
+                <td>6.09MB</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="group2" class="in_group m">
+    <div class="group-hd">
+        <h2>Download metabolome file</h2>
+    </div>
+    <div class="downbox" style=" margin:auto">
+        <table id="table9" class="tabsty table table-striped" style="margin-bottom:40px;font-size:17px;">
+            <tbody>
+            <tr style="font-weight: bold; text-align: center; background-color: rgb(234,234,234)">
+                <td style="width: 25%">File</td>
+                <td style="width: 25%">File Size</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="./download/cassava_metabolite.txt">Cassava_metabolite.txt</a>
+                </td>
+                <td>204KB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="./download/sugarcane_metabolite.txt">Sugarcane_metabolite.txt</a>
+                </td>
+                <td>95.9KB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="./download/Elaeis_guineensis_Metabolome_sample_information.txt">Elaeis_guineensis_Metabolome_sample_information.txt</a>
+                </td>
+                <td>2.33KB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="./download/Elaeis_guneensis_metabolite_content.txt">Elaeis_guneensis_metabolite_content.txt</a>
+                </td>
+                <td>537KB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="./download/Elaeis_guneensis_metabolite_information.txt">Elaeis_guneensis_metabolite_information.txt</a>
+                </td>
+                <td>146KB</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="group1" class="in_group m">
+    <div class="group-hd">
+        <h2>Download variome file</h2>
+    </div>
+    <div class="downbox" style=" margin:auto">
+        <table id="table8" class="tabsty table table-striped" style="margin-bottom:40px;font-size:17px;">
+            <tbody>
+            <tr style="font-weight: bold; text-align: center; background-color: rgb(234,234,234)">
+                <td style="width: 25%">File</td>
+                <td style="width: 25%">File Size</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="/mnt/sdb/dwb/573_cassava.indel.vcf.gz">573_cassava.indel.vcf.gz</a>
+                </td>
+                <td>38.2GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="/mnt/sdb/dwb/573_cassava.snp.vcf.gz">573_cassava.snp.vcf.gz</a>
+                </td>
+                <td>187GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="/mnt/sdb/dwb/98_oilpalm.indel.vcf.gz">98_oilpalm.indel.vcf.gz</a>
+                </td>
+                <td>3.19GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="/mnt/sdb/dwb/98_oilpalm.snp.vcf.gz">98_oilpalm.snp.vcf.gz</a>
+                </td>
+                <td>37.6GB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="/mnt/sdb/dwb/336_rubbertree.indel.vcf.gz">336_rubbertree.indel.vcf.gz</a>
+                </td>
+                <td>449MB</td>
+            </tr>
+            <tr style="text-align: center; background-color: white">
+                <td>
+                    <a href="/mnt/sdb/dwb/336_rubbertree.snp.vcf.gz">336_rubbertree.snp.vcf.gz</a>
+                </td>
+                <td>8.76GB</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="footer m">
+    <p> Hainan University, Sanya, Hainan, China | 2024</p>
+</div>
+</body>
+</html>

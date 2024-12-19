@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropDB</title>
+     <!--Bootstrap core css-->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="static/css/index.css">
+     <link rel="stylesheet" href="static/css/gene_search.css">
+	<link rel="icon" href="../static/images/icon.png">
+    <!-- Bootstrap core JS-->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/chart.js"></script>
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/chart.esm.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="h">
+	<h1>TropDB<small>Tropical Crops Genome Database</small></h1>
+</div>
+
+<!--nav-->
+<div class="w">
+	<ul class="shell">
+		<li class="botton">
+			<span ><a href="index.html">Home</a> </span>
+		</li>
+		<!--<li class="botton">
+            <span>Species<span class="caret"></span></span>
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Cassava</a>
+                    <ul class="submenu">
+                        <li><a href="species/cassava6.1.html"><i>Manihot esculenta v6</i></a></li>
+                        <li><a href="species/cassava7.1.html"><i>Manihot esculenta v7</i></a></li>
+                        <li><a href="species/cassava8.1.html"><i>Manihot esculenta v8</i></a></li>
+                        <li><a href="species/cassavaT2T.html"><i>Manihot esculenta T2T</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Sugarcane</a>
+                    <ul class="submenu">
+                        <li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar R570 v2.1</i></a></li>
+                        <li><a href="species/sugarcane1.html"><i>Saccharum spontaneum Np-X</i></a></li>
+                        <li><a href="species/sugarcane2.html"><i>Saccharum officinarum LApurple</i></a></li>
+                        <li><a href="species/sugarcane3.html"><i>Saccharum spontaneum AP85-441</i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Oil palm</a>
+                    <ul class="submenu">
+                        <li><a href="species/oil_plam.html"><i>Elaeis guineensis EG5</i></a></li>
+                        <li><a href="species/oilpalm3.html"><i>Elaeis guineensis EG11</i></a> </li>
+                        <li><a href="species/oilpalm1.html"><i>Elaeis guineensis EGPMv6</i></a> </li>
+                        <li><a href="species/oilpalm2.html"><i>Elaeis guineensis EGV3</i></a> </li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Olive</a>
+                    <ul class="submenu">
+                        <li><a href="species/olive.html"><i>Olea europaea v1.0</i></a> </li>
+                        <li><a href="species/olive1.html"><i>Olea europaea A9</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/kenaf.html">Kenaf</a></li>
+                <li class="has-submenu">
+                    <a href="#">Castor</a>
+                    <ul class="submenu">
+                        <li><a href="species/castor.html"><i>Ricinus communis v0.1</i></a> </li>
+                        <li><a href="species/castor1.html"><i>Ricinus communis v1</i></a> </li>
+                    </ul>
+                </li>
+                <li><a href="./species/Kapok.html">Kapok</a></li>
+                <li class="has-submenu">
+                    <a href="#">Rubber tree</a>
+                    <ul class="submenu">
+                        <li><a href="species/natural_rubber.html"><i>Hevea brasiliensis GT1</i></a> </li>
+                        <li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>-->
+		<li class="botton">
+			<span>Genome<span class="caret"></span></span>
+			<ul>
+				<li class="has-submenu">
+					<a href="#">Cassava</a>
+					<ul class="submenu">
+						<li><a href="species/cassava6.1.html"><i>Manihot esculenta </i>v6</a></li>
+						<li><a href="species/cassava7.1.html"><i>Manihot esculenta </i>v7</a></li>
+						<li><a href="species/cassava8.1.html"><i>Manihot esculenta </i>v8</a></li>
+						<li><a href="species/cassavaT2T.html"><i>Manihot esculenta </i>T2T</a></li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Sugarcane</a>
+					<ul class="submenu">
+						<li><a href="species/sugar_cane.html"><i>Saccharum hybrid cultivar</i> R570 v2.1</a></li>
+						<li><a href="species/sugarcane1.html"><i>Saccharum spontaneum </i>Np-X</a></li>
+						<li><a href="species/sugarcane2.html"><i>Saccharum officinarum</i> LApurple</a></li>
+						<li><a href="species/sugarcane3.html"><i>Saccharum spontaneum</i> AP85-441</a></li>
+						<li><a href="./species/Saccharumrufipilum.html">Saccharum rufipilum</a></li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Oil palm</a>
+					<ul class="submenu">
+						<li><a href="species/oil_plam.html"><i>Elaeis guineensis </i>EG5</a></li>
+						<li><a href="species/oilpalm3.html"><i>Elaeis guineensis </i>EG11</a> </li>
+						<li><a href="species/oilpalm1.html"><i>Elaeis guineensis </i>EGPMv6</a> </li>
+						<li><a href="species/oilpalm2.html"><i>Elaeis guineensis </i>EGV3</a> </li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Olive</a>
+					<ul class="submenu">
+						<li><a href="species/olive.html"><i>Olea europaea </i>v1.0</a> </li>
+						<li><a href="species/olive1.html"><i>Olea europaea </i>A9</a> </li>
+					</ul>
+				</li>
+				<li><a href="./species/kenaf.html">Kenaf</a></li>
+				<li class="has-submenu">
+					<a href="#">Castor</a>
+					<ul class="submenu">
+						<li><a href="species/castor.html"><i>Ricinus communis </i>Hale</a> </li>
+						<li><a href="species/castor1.html"><i>Ricinus communis </i>v1</a> </li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Kapok</a>
+					<ul class="submenu">
+						<li><a href="species/Kapok.html"><i>Bombax ceiba</i></a></li>
+						<li><a href="species/Ceiba_pentandra.html"><i>Ceiba pentandra</i></a></li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Rubber tree</a>
+					<ul class="submenu">
+						<li><a href="species/natural_rubber.html"><i>Hevea brasiliensis</i> GT1</a> </li>
+						<li><a href="species/rubbertree.html"><i>Hevea brasiliensis</i></a> </li>
+					</ul>
+				</li>
+				<li><a href="./blast.html" >BLAST</a> </li>
+				<li><a href="./jbrowse.html">JBrowse</a></li>
+				<li><a href="./gene_search.html">Gene Search</a></li>
+				<li><a href="./gene_family_search.php">Gene Family Search</a> </li>
+				<li><a href="./miRNA.php">miRNA Search</a></li>
+				<li><a href="https://github.com/frankgenome/DataColor">DataColor</a></li>
+			</ul>
+		</li>
+		<li class="botton">
+			<span>Transcriptome<span class="caret"></span> </span>
+			<ul>
+				<li class="has-submenu">
+					<a href="#">Cassava</a>
+					<ul class="submenu">
+						<li><a href="expression/cassavaexpression.html">Various organs</a> </li>
+						<li><a href="expression/cassavaexpression1.html">Xanthomonas </a> </li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Sugercane</a>
+					<ul class="submenu">
+						<li><a href="expression/sugercane.html">Various organs</a></li>
+						<li><a href="expression/sugercane1.html">Drought stress</a></li>
+						<li><a href="expression/sugercane2.html">Cold stress</a> </li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Oil palm</a>
+					<ul class="submenu">
+						<li><a href="expression/elaeisexpression.html">Rought and salinity</a> </li>
+						<li><a href="expression/elaeisexpression1.html">Salt stress</a> </li>
+						<li><a href="expression/elaeisexpression2.html">Cold stress</a> </li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">Kenaf</a>
+					<ul class="submenu">
+						<li><a href="expression/kenaf.html">Various organs</a> </li>
+						<li><a href="expression/kenaf2.html">Salt stress</a> </li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#" >Rubber tree</a>
+					<ul class="submenu">
+						<li><a href="expression/rubber.html">Various organs</a> </li>
+						<li><a href="expression/rubber1.html">Laticifer replicate</a> </li>
+						<li><a href="expression/rubber2.html">Drying process</a> </li>
+						<li><a href="expression/rubber3.html">Cold stress</a> </li>
+					</ul>
+				</li>
+				<li class="has-submenu">
+					<a href="#">eFP-gene</a>
+					<ul class="submenu">
+						<li><a href="efp/cassava_efp.html">Cassava</a> </li>
+						<li><a href="efp/sugarcane_efp.html">Sugarcane</a> </li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="botton">
+			<span>Variome<span class="caret"></span> </span>
+			<ul>
+				<li><a href="variome/573cassava.indel.html">Cassava</a> </li>
+				<li><a href="variome/98oilplamindel.html">Oil palm</a> </li>
+				<li><a href="./variome/336.rubbrtree.indel.html">Rubber tree</a> </li>
+			</ul>
+		</li>
+		<li class="botton">
+			<span>Metabolome<span class="caret"></span> </span>
+			<ul>
+
+				<li><a href="metabolite/cassava.html">Cassava</a> </li>
+				<li><a href="metabolite/sugarcane.html">Sugarcane</a> </li>
+				<li><a href="./metabolite/oilpalm.html">Oil palm</a> </li>
+			</ul>
+		</li>
+		<li class="botton">
+			<span>Phenomics<span class="caret"></span> </span>
+			<ul>
+				<li><a href="./phenomics/cassava.html">Cassava</a> </li>
+				<li><a href="./phenomics/sugarcane.html">Sugarcane</a> </li>
+			</ul>
+		</li>
+		<li class="botton">
+			<span><a href="./download.html">Downloads</a></span>
+		</li>
+		<li class="botton">
+			<span>Breeding<span class="caret"></span></span>
+			<ul>
+				<li class="has-submenu">
+					<a href="#">Key genes</a>
+					<ul class="submenu">
+						<li><a href="keygene/starch.html">Starch gene</a></li>
+						<li><a href="keygene/suger.html">Sugar gene</a> </li>
+						<li><a href="keygene/oil.html">Oil gene</a> </li>
+					</ul>
+				</li>
+				<li><a href="guideRNA.html">GuideRNA</a> </li>
+			</ul>
+		</li>
+		<li class="botton">
+			<span>Help<span class="caret"></span></span>
+			<ul>
+				<li><a href="./helpyou.html">FAQ</a> </li>
+				<li><a href="./helpus.html">Contact us</a></li>
+				<li><a href="conference.html">Conferences</a></li>
+				<li><a href="links.html">Links</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+    <script language="JavaScript">
+      function test(textOne){
+      document.all.textOne.value=textOne.value
+      }
+    </script>
+<div id="group" class="in_group m">
+    <div class="group-hd">
+        <h2>Conferences</h2>
+    </div>
+        <div id="group">
+	<div class="faq">
+		<div style="margin: 30px;font-size: 14px;">
+			 <p>1. <strong>首届国际热带植物学术会议</strong><br>
+			Time：February 8 to 10, 2023<br>
+			Place：Sanya, Hainan, China<br>
+		  URL：www.confrxiv.com/ICTP2022/</p>
+			 <p>2. <strong>The 9th International Horticulture Research Conference</strong><br>
+			Time：October 19 to 21, 2022<br>
+			Place：Hubei, Wuhan, China<br>
+		  URL：www.confrxiv.com/IHRC2022/</p>
+            <p>3. <strong>植物科学前沿学术大会</strong><br>
+			Time：July 19 to 21, 2022<br>
+			Place：Nanjing, Jiangsu, China<br>
+		  URL：http://www.botany.org.cn/</p>
+			 <p>4. <strong>XIII International Controlled and Modified Atmosphere Research Conference (CAMA)</strong><br>
+			Time：August 9 to 11, 16 to 18, 2021<br>
+			Place：Leuven, Belgium<br>
+		  URL：http://rosaceaegenomics.com/index.php?go=inicio</p>
+            <p>5. <strong>X ISHS International Peach Symposium</strong><br>
+			Time：August 1 to 6, 2021<br>
+			Place：Naoussa, Greece<br>
+		  URL：https://www.fruitsciences.eu/peach2021/</p>
+            <p>6. <strong>9th International Strawberry Symposium</strong><br>
+			Time：May 21 to June 4, 2021<br>
+			Place：Yancheng, China<br>
+		  URL：https://www.iss2021.com/</p>
+            <p>7. <strong>XII International Symposium on Integrating Canopy, Rootstock and Environmental Physiology in Orchard Systems </strong><br>
+			Time：May 1 to 5, 2021<br>
+			Place：Wenatchee, WA<br>
+		  URL：http://rosaceaegenomics.com/index.php?go=inicio</p>
+            <p>8. <strong>Strawberry Genomics Workshop at PAG XXVIII</strong><br>
+			Time：May 1 to 5, 2021<br>
+			Place：Yancheng, China<br>
+		  URL：https://www.iss2021.com/</p>
+            <p>9. <strong>The Plant and Animal Genome XXVIII Conference</strong><br>
+			Time：July 1 to 30, 2020<br>
+			Place：San Diego, USA<br>
+		  URL：https://www.intlpag.org/2020/</p>
+            <p>10. <strong>The 7th International Horticulture Research Conference</strong><br>
+			Time：July 1 to 30, 2020<br>
+			Place：Online<br>
+		  URL：http://www.hortres-conference.org/</p>
+            <p>11. <strong>10th International Rosaceae Genomics Conference (RGC 10)</strong><br>
+			Time：December 14 to 17, 2020<br>
+			Place：Barcelona, Spain<br>
+		  URL：http://rosaceaegenomics.com/index.php?go=inicio</p>
+            <p>12. <strong>XI International Symposium on Protected Cultivation in Mild Winter Climates & I International Symposium on Nettings and Screens in Horticulture</strong><br>
+			Time：January 27 to 31, 2019<br>
+			Place：Tenerife (Spain - Canary Islands)<br>
+		  URL：https://www.ishs.org/symposium/692</p>
+			<p>13.<strong> International Horticulture Conference</strong><br>
+			Time：February 26 to 28, 2019<br>
+			Place：Multan,Pakistan<br>
+		  URL：http://www.bzu.edu.pk/international-horticulture-conference-february-262728-2019_22941.html</p>
+			<p>14. <strong>X International Symposium on Artichoke, Cardoon and their Wild Relatives</strong><br>
+			Time：March 12 to 15, 2019<br>
+			Place：Orihuela, Alicante, Spain<br>
+		  URL：https://www.ishs.org/symposium/634</p>
+			<p>15. <strong>International Conference on Post-transcriptional Gene Regulation in Plants (PGRP) 2019</strong><br>
+			Time：March 18 to 20, 2019<br>
+			Place：Nara, Japan<br>
+		  URL：https://pgrp2019.jimdofree.com/</p>
+			<p>16. <strong>中国园艺学会球宿根花卉分会</strong><br>
+			Time：April 10 to 13, 2019<br>
+		  Place：陕西省西安市植物园老园区</p>
+			<p>17.<strong> 第21届中国国际花卉园艺展览会</strong><br>
+			Time：April 20 to 22, 2019<br>
+			Place：中国上海<br>
+		  URL：https://www.tradefairdates.com/Hortiflorexpo-IPM-M355/Shanghai.html</p>
+			<p>18. <strong>5th International Conference on Food and Beverages</strong><br>
+			Time：April 22 to 23, 2019<br>
+			Place：Osaka, Japan<br>
+		  URL：https://www.meetingsint.com/conferences/food-beverages</p>
+			<p>19.<strong> XIII International Symposium on Flower Bulbs and Herbaceous Perennials</strong><br>
+			Time：May 1 to 3, 2019<br>
+			Place：Seoul, Korea<br>
+		  URL：https://www.ishs.org/symposium/684</p>
+			<p>20. <strong>Keystone Symposia--Climate Change-Linked Stress Tolerance in Plants</strong><br>
+			Time：May 13 to 16, 2019<br>
+			Place：Hannover, Germany<br>
+		  URL：https://www.cell.com/molecular-plant/home</p>
+			<p>21. <strong>第三届中国国际茶叶博览会</strong><br>
+			Time：May 14 to 19, 2019<br>
+			Place：杭州国际博览中心<br>
+			URL：http://www.moa.gov.cn/gk/tzgg_1/tz/201901/t20190122_6170564.htm<br>
+		  Organizers：中华人民共和国农业农村部、浙江省人民政府</p>
+			<p>22. <strong>第8届国际香蕉大会</strong><br>
+			Time：May 28 to 31, 2019<br>
+			Place：Miami, USA<br>
+		  URL：https://congresointernacionaldebanano.com/</p>
+			<p>23. <strong>NJF Conference on Horticulture</strong><br>
+			Time：June 10 to 13, 2019<br>
+			Place：Tallinn, Estonia<br>
+		  URL：https://njf-horticulture2019.ee/</p>
+			<p>24. <strong>30th International Conference on Arabidopsis Research</strong><br>
+			Time：June 16 to 21, 2019<br>
+			Place：中国武汉<br>
+			URL：http://icar2019.arabidopsisresearch.org/<br>
+		  Organizers：华中农业大学</p>
+			<p>25. <strong>Greensys 2019 - International Symposium on Advanced Technologies and Management for Innovative Greenhouses</strong><br>
+			Time：June 16 to 20, 2019<br>
+			Place：Angers, France<br>
+		  URL：https://www.ishs.org/symposium/522</p>
+			<p>26.<strong> 23rd International Conference on Plant Growth Substances (IPGSA2019)</strong><br>
+			Time：June 25-29, 2019<br>
+			Place：Paris, France<br>
+			URL：https://www.ipgsa2019.com/<br>
+		  Organizers：The International Plant Growth Substances Association</p>
+			<p>27.<strong> The 12th Congress and Academic Conference of Chinese Society for Plant Biology</strong><br>
+			Time：July 5 to 8, 2019<br>
+			Place：中国南昌<br>
+		  URL：https://www.cell.com/molecular-plant/home</p>
+			<p>28. <strong>XVII INTERNATIONAL SYMPOSIUM ON APRICOT BREEDING AND CULTURE</strong><br>
+			Time：July 6 to 10, 2019<br>
+		  URL：https://fruitworldmedia.com/index.php/event/xvii-international-symposium-apricot-breeding-culture/</p>
+			<p>29. <strong>International Workshop on Plant Membrane Biology</strong><br>
+			Time：July 7 to 12, 2019<br>
+			Place：Glasgow, UK<br>
+		  URL：http://iwpmb2019.psrg.org.uk/</p>
+			<p>30. <strong>The Annual Meeting of ASHS</strong><br>
+			Time：July 21 to 25, 2019<br>
+			Place：Las Vegas, USA<br>
+		  URL：https://ashs.org/general/custom.asp?page=GeneralConference</p>
+			<p>31. <strong>中国园艺学会青年学者联合会第五届学术研讨会</strong><br>
+		  Time：July, 2019</p>
+			<p>32.<strong> 2019中国观赏园艺学术研讨会</strong><br>
+			Time：July, 2019<br>
+		  Place：中国北京</p>
+			<p>33. <strong>Plant Biology 2019</strong><br>
+			Time：August 3 to 7, 2019<br>
+		  Place：San Jose, California，USA</p>
+			<p>34.<strong> 第二十届全国植物基因组学大会 </strong><br>
+		  Time：August, 2019</p>
+			<p>35. <strong>中国园艺学会番茄分会</strong><br>
+		  Time：August, 2019</p>
+			<p>36.<strong> 14th International Conference on Agriculture & Horticulture</strong><br>
+			Time：August 15 to 16, 2019<br>
+			Place：Rome, Italy<br>
+		  URL：https://agriculture-horticulture.conferenceseries.com/events-list/horticulture</p>
+			<p>37.<strong> 中国园艺学会分子育种分会第二届学术年会暨第八届全国果树分子生物学学术研讨会</strong><br>
+			Time：August 16 to 18, 2019<br>
+			Place：上海光大会展中心国际大酒店<br>
+			URL：http://www.cshs.org.cn/Html/NewsView.asp?ID=626&SortID=172<br>
+		  Organizers：中国园艺学会（分子育种分会与果树专业委员会）</p>
+			<p>38.<strong> IV BALKAN SYMPOSIUM ON FRUIT GROWING</strong><br>
+			Time：September 14 to 18, 2019<br>
+		  URL：https://fruitworldmedia.com/index.php/event/iv-balkan-symposium-fruit-growing/</p>
+			<p>39.<strong> The 16th Solanaceae Conference</strong><br>
+			Time：September 15 to 19, 2019<br>
+			Place：Jerusalem， Israel<br>
+		  URL：https://10times.com/solanaceae-conference-jerusalem</p>
+			<p>40. <strong>The Leading China Annual Conference & Exhibition Covering High Tech Ag</strong><br>
+			Time：September 23 to 25, 2019<br>
+			Place：四川成都<br>
+			URL：https://lifesciences.knect365.com/new-ag-international-china/<br>
+		  Organizers：International Biocontrol Manufacturers Association, New Ag International</p>
+		  <p>41. <strong>6th International Horticulture Research Conference</strong><br>
+			Time：September 30 to October 6, 2019<br>
+			Place：Venice， Italy</p>
+			<p>42. <strong>21st International Conference on Nitrogen Fixation</strong><br>
+			Time：October 10 to 15, 2019<br>
+			Place：中国武汉<br>
+			URL：http://2019icnf.csp.escience.cn/dct/page/1<br>
+			Organizers：华中农业大学</p>
+		</div>
+	</div>
+</div>
+    </div>
+<div class="footer m">
+            <p>eplant |  Hainan University, Hainan, Haiko , China | 2021</p>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TropGD</title>
+     <!--Bootstrap core css-->
+    <link rel="stylesheet" href="../127.0.0.1/static/css/bootstrap.css">
+    <link rel="stylesheet" href="../127.0.0.1/static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../127.0.0.1/static/css/index.css">
+     <link rel="stylesheet" href="../127.0.0.1/static/css/gene_search.css">
+<link rel="icon" href="../127.0.0.1/static/images/topical.jpg">
+    <!-- Bootstrap core JS-->
+    <script src="../127.0.0.1/static/js/jquery-3.2.1.min.js"></script>
+    <script src="../127.0.0.1/static/js/jquery.js"></script>
+    <script src="../127.0.0.1/static/js/bootstrap.js"></script>
+    <script src="../127.0.0.1/static/js/bootstrap.min.js"></script>
+    <script src="../127.0.0.1/static/js/chart.js"></script>
+    <script src="../127.0.0.1/static/js/chart.min.js"></script>
+    <script src="../127.0.0.1/static/js/chart.esm.js"></script>
+</head>
+<body>
+     <!--header-->
+    <div class="header h1">
+    <h1>TropGB<small>Tropical Crop Genome Database</small></h1>
+    </div>
+
+    <!--nav-->
+ <div class="w">
+     <ul class="shell">
+         <li class="botton">
+             <span><a href="http://plants.hainanu.edu.cn/index.html">Home</a> </span>
+         </li>
+         <li class="botton">
+             <span>Species<span class="caret"></span></span>
+             <ul>
+                 <li><a href="http://plants.hainanu.edu.cn/Musa%20acuminata.html">Banana</a> </li>
+                 <li><a href="http://plants.hainanu.edu.cn/species/Arecac.html">Areca plam</a></li>
+                 <li><a href="http://plants.hainanu.edu.cn/species/coffee.html">Coffee</a></li>
+                 <li><a href="http://plants.hainanu.edu.cn/species/coco.html">Cacao</a> </li>
+                 <li><a href="http://plants.hainanu.edu.cn/species/mango.html">Mango</a></li>
+                 <li><a href="http://plants.hainanu.edu.cn/species/orchid.html">Orchid</a></li>
+                 <li><a href="http://plants.hainanu.edu.cn/species/passion.html">passion fruit</a> </li>
+                 <li><a href="http://plants.hainanu.edu.cn/species/rambu.html">Rambutan</a></li>
+                 <li><a href="#">Orchid</a></li>
+             </ul>
+         </li>
+         <li class="botton">
+             <span>Tools<span class="caret"></span></span>
+             <ul>
+                 <li><a href="#">BLAST</a> </li>
+                 <li><a href="#">JBrowse</a></li>
+                 <li><a href="http://plants.hainanu.edu.cn/gene_search.html">Gene Search</a></li>
+                 <li><a href="#">Gene Family Search</a> </li>
+                 <li><a href="#">Synteny Search</a></li>
+                 <li><a href="#">miRNA Search</a></li>
+                 <li><a href="#">Transcription Factors</a></li>
+                 <li><a href="#">Varieties</a></li>
+             </ul>
+         </li>
+         <li class="botton">
+             <span>Downloads</span>
+         </li>
+         <li class="botton">
+             <span>Community<span class="caret"></span></span>
+             <ul>
+                 <li><a href="#">Conferences</a> </li>
+                 <li><a href="#">Links</a></li>
+                 <li><a href="#">Publications</a></li>
+             </ul>
+         </li>
+         <li class="botton">
+             <span>Help<span class="caret"></span></span>
+             <ul>
+                 <li><a href="#">Conferences</a> </li>
+                 <li><a href="#">Links</a></li>
+                 <li><a href="#">Publications</a></li>
+             </ul>
+         </li>
+         <li class="botton">
+             <span><a href="https://www.maxapress.com/tp">Journal</a></span>
+         </li>
+     </ul>
+ </div>
+<!--search-->
+     <div class="chart m">
+<div class="chart-container">
+        <canvas id="chart"></canvas>
+    </div>
+    <script src="../static/js/chart.min.js"
+        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+        crossorigin="anonymous"></script>
+    <script>
+        new Chart(document.getElementById("chart"), {
+            "type": "bar",
+            "data": {
+                "labels": ["Economic", "Oil", "Spice", "Beverage", "Medicinal", "Ornamental", "Tropical Fruit"],
+                "datasets": [{
+                    "label": "My First Dataset",
+                    "data": [65, 59, 80, 81, 56, 55, 40],
+                    "fill": false,
+                    "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
+                        "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)",
+                        "rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)",
+                        "rgba(201, 203, 207, 0.2)"
+                    ],
+                    "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
+                        "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)",
+                        "rgb(201, 203, 207)"
+                    ],
+                    "borderWidth": 1
+                }]
+            },
+            "options": {
+                "scales": {
+                    "yAxes": [{
+                        "ticks": {
+                            "beginAtZero": true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+<div class="chart-con">
+        <canvas id="chart-a"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+        crossorigin="anonymous"></script>
+    <script>
+        new Chart(document.getElementById("chart-a"), {
+            "type": "doughnut",
+            "data": {
+                "labels": ["Red", "Blue", "Yellow"],
+                "datasets": [{
+                    "label": "My First Dataset",
+                    "data": [300, 50, 100],
+                    "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                }]
+            }
+        });
+    </script>
+
+     </div>
